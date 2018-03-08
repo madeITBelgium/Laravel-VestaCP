@@ -1,7 +1,7 @@
 {
-  "name": "madeitbelgium/laravel-vestacp-sdk",
+  "name": "madeitbelgium/laravel-vestacp",
   "version": "0.0.1",
-  "description": "PHP Laravel VestaCP SDK",
+  "description": "PHP Laravel VestaCP",
   "keywords": ["hosting", "vestacp"],
   "homepage": "http://www.madeit.be",
   "type": "library",
