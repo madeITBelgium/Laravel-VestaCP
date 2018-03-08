@@ -34,15 +34,15 @@ class VestaCP
     {
         $this->server = $server;
         $this->hash = $hash;
-        
+
         if ($client == null) {
             $this->client = new Client([
-                'base_uri' => 'https://' . $server . ':8083',
-                'timeout' => 5.0,
-                'headers' => [
-                    'User-Agent' => 'Made I.T. Vesta SDK V' . $this->version,
-                    'Accept' => 'application/json',
-                ]
+                'base_uri' => 'https://'.$server.':8083',
+                'timeout'  => 5.0,
+                'headers'  => [
+                    'User-Agent' => 'Made I.T. Vesta SDK V'.$this->version,
+                    'Accept'     => 'application/json',
+                ],
             ]);
         } else {
             $this->client = $client;
@@ -64,44 +64,47 @@ class VestaCP
     public function call($command, $returnCode = '', $parameters = [])
     {
         $requestData = [
-            'hash' => $this->hash,
-            'cmd' => $command,
+            'hash'       => $this->hash,
+            'cmd'        => $command,
             'returncode' => $returnCode,
         ];
-        
+
         $i = 1;
-        foreach($parameters as $val) {
-            $requestData['arg' . $i++] = $val;
+        foreach ($parameters as $val) {
+            $requestData['arg'.$i++] = $val;
         }
-        $requestData['arg' . $i++] = 'json';
-        
+        $requestData['arg'.$i++] = 'json';
+
         $response = $this->client->request('GET', '/api/');
-        if($response->getStatusCode() == 200) {
-            $body = (string)$response->getBody();
+        if ($response->getStatusCode() == 200) {
+            $body = (string) $response->getBody();
         } else {
-            throw \Exception("Vesta error: " . $response->getStatusCode());
+            throw \Exception('Vesta error: '.$response->getStatusCode());
         }
-        
+
         $this->lastResultCode = 0;
-        
-        if(!$this->isJson($body)) {
+
+        if (!$this->isJson($body)) {
             $this->checkResultCode($body);
+
             return true;
         }
+
         return json_decode($body, true);
     }
-    
+
     private function isJson($body)
     {
         json_decode($body);
-        return (json_last_error() == JSON_ERROR_NONE);
+
+        return json_last_error() == JSON_ERROR_NONE;
     }
 
     private function checkResultCode($output)
     {
         switch ($output) {
             case 0: return true; break; //Command Successful
-            
+
             case 1: throw new \Exception('Not enough arguments provided'); break;
             case 2: throw new \Exception('Object or argument is not valid'); break;
             case 3: throw new \Exception('Object doesn\'t exist'); break;

@@ -2,5 +2,5 @@
 
 return [
   'server' => env('VESTACP_SERVER'),
-  'hash' => env('VESTACP_HASH'),
+  'hash'   => env('VESTACP_HASH'),
 ];
