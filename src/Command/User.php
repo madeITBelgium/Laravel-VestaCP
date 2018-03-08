@@ -38,8 +38,7 @@ class User
     }
 
     /**
-     * list all vesta users
-     *
+     * list all vesta users.
      */
     public function listUsers()
     {
