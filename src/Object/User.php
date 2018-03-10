@@ -160,7 +160,7 @@ class User
         $obj->setU_dns_records($user['U_DNS_RECORDS']);
         $obj->setU_mail_domains($user['U_MAIL_DOMAINS']);
         $obj->setU_mail_dkim($user['U_MAIL_DKIM']);
-        $obj->setU_ ($user['U_MAIL_ACCOUNTS']);
+        $obj->setU_mail_accounts($user['U_MAIL_ACCOUNTS']);
         $obj->setU_databases($user['U_DATABASES']);
         $obj->setU_cron_jobs($user['U_CRON_JOBS']);
         $obj->setU_backups($user['U_BACKUPS']);
