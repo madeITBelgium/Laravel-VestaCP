@@ -124,8 +124,9 @@ class User
         $obj->setPackageCronJobs($user['CRON_JOBS']);
         $obj->setPackageBandwidth($user['BANDWIDTH']);
 
-        if(isset($user['HOME']))
+        if (isset($user['HOME'])) {
             $obj->setHome($user['HOME']);
+        }
         $obj->setNs($user['NS']);
         $obj->setShell($user['SHELL']);
         $obj->setPackageBackups($user['BACKUPS']);
@@ -143,10 +144,12 @@ class User
         $obj->setSuspended_cron($user['SUSPENDED_CRON']);
         $obj->setIpAvailable($user['IP_AVAIL']);
         $obj->setIpOwned($user['IP_OWNED']);
-        if(isset($user['IP6_AVAIL']))
+        if (isset($user['IP6_AVAIL'])) {
             $obj->setIp6Available($user['IP6_AVAIL']);
-        if(isset($user['IP6_OWNED']))
+        }
+        if (isset($user['IP6_OWNED'])) {
             $obj->setIp6Owned($user['IP6_OWNED']);
+        }
         $obj->setU_users($user['U_USERS']);
         $obj->setU_disk($user['U_DISK']);
         $obj->setU_disk_dirs($user['U_DISK_DIRS']);
@@ -160,7 +163,7 @@ class User
         $obj->setU_dns_records($user['U_DNS_RECORDS']);
         $obj->setU_mail_domains($user['U_MAIL_DOMAINS']);
         $obj->setU_mail_dkim($user['U_MAIL_DKIM']);
-        $obj->setU_ ($user['U_MAIL_ACCOUNTS']);
+        $obj->setU_($user['U_MAIL_ACCOUNTS']);
         $obj->setU_databases($user['U_DATABASES']);
         $obj->setU_cron_jobs($user['U_CRON_JOBS']);
         $obj->setU_backups($user['U_BACKUPS']);
