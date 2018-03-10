@@ -151,7 +151,7 @@ class User
         $obj->setU_disk_dirs($user['U_DISK_DIRS']);
         $obj->setU_disk_web($user['U_DISK_WEB']);
         $obj->setU_disk_mail($user['U_DISK_MAIL']);
-        $obj->setU_dsk_db($user['U_DISK_DB']);
+        $obj->setU_disk_db($user['U_DISK_DB']);
         $obj->setU_bandwidth($user['U_BANDWIDTH']);
         $obj->setU_web_domains($user['U_WEB_DOMAINS']);
         $obj->setU_web_aliases($user['U_WEB_ALIASES']);
