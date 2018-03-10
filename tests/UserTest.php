@@ -153,7 +153,6 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(2, count($response));
         $this->assertEquals('admin', $response[0]->getUsername());
     }
-    }
 
     //v-list-user
     public function testListUser()
