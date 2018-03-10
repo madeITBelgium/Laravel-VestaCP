@@ -1,19 +1,24 @@
-# PHP Laravel VestaCP SDK
-[![Build Status](https://travis-ci.org/madeITBelgium/Laravel-VestaCP-SDK.svg?branch=master)](https://travis-ci.org/madeITBelgium/Laravel-VestaCP-SDK)
-[![Coverage Status](https://coveralls.io/repos/github/madeITBelgium/Laravel-VestaCP-SDK/badge.svg?branch=master)](https://coveralls.io/github/madeITBelgium/Laravel-VestaCP-SDK?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/madeITBelgium/Laravel-VestaCP-SDK/v/stable.svg)](https://packagist.org/packages/madeITBelgium/Laravel-VestaCP-SDK)
-[![Latest Unstable Version](https://poser.pugx.org/madeITBelgium/Laravel-VestaCP-SDK/v/unstable.svg)](https://packagist.org/packages/madeITBelgium/Laravel-VestaCP-SDK)
-[![Total Downloads](https://poser.pugx.org/madeITBelgium/Laravel-VestaCP-SDK/d/total.svg)](https://packagist.org/packages/madeITBelgium/Laravel-VestaCP-SDK)
-[![License](https://poser.pugx.org/madeITBelgium/Laravel-VestaCP-SDK/license.svg)](https://packagist.org/packages/madeITBelgium/Laravel-VestaCP-SDK)
+# PHP Laravel VestaCP
+[![Build Status](https://travis-ci.org/madeITBelgium/Laravel-VestaCP.svg?branch=master)](https://travis-ci.org/madeITBelgium/Laravel-VestaCP)
+[![Coverage Status](https://coveralls.io/repos/github/madeITBelgium/Laravel-VestaCP/badge.svg?branch=master)](https://coveralls.io/github/madeITBelgium/Laravel-VestaCP?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a02d5ce31bccce094068/maintainability)](https://codeclimate.com/github/madeITBelgium/Laravel-VestaCP/maintainability)
+[![Latest Stable Version](https://poser.pugx.org/madeITBelgium/Laravel-VestaCP/v/stable.svg)](https://packagist.org/packages/madeITBelgium/Laravel-VestaCP)
+[![Latest Unstable Version](https://poser.pugx.org/madeITBelgium/Laravel-VestaCP/v/unstable.svg)](https://packagist.org/packages/madeITBelgium/Laravel-VestaCP)
+[![Total Downloads](https://poser.pugx.org/madeITBelgium/Laravel-VestaCP/d/total.svg)](https://packagist.org/packages/madeITBelgium/Laravel-VestaCP)
+[![License](https://poser.pugx.org/madeITBelgium/Laravel-VestaCP/license.svg)](https://packagist.org/packages/madeITBelgium/Laravel-VestaCP)
 
 With this Laravel package you can connect to your vesta cp server.
 
 # Installation
+Install the package through composer
+```php
+composer require madeitbelgium/laravel-vestacp
+```
 
 Require this package in your `composer.json` and update composer.
 
 ```php
-"madeitbelgium/Laravel-vestacp-sdk": "0.*"
+"madeitbelgium/laravel-vestacp": "0.*"
 ```
 
 ## On laravel Version < 5.5

@@ -45,9 +45,18 @@ class User
         $response = $this->vestacp->call('v-list-users');
 
         $user = new ObjectUser();
-        $user->loadData('list', $response);
+        return $user->loadData('list', $response);
+    }
 
-        return $user;
+    /**
+     * list sigle vesta users.
+     */
+    public function get($username)
+    {
+        $response = $this->vestacp->call('v-list-user', '', [$username]);
+
+        $user = new ObjectUser();
+        return $user->loadData('get', $response);
     }
 
     public function getLastResultCode()

@@ -82,7 +82,10 @@ class User
     public function loadData($command, $data)
     {
         if ($command == 'list') {
-            $this->listUsers($data);
+            return $this->listUsers($data);
+        }
+        else if ($command == 'get') {
+            return $this->listUsers($data)[0];
         }
     }
 
@@ -90,71 +93,79 @@ class User
     {
         $result = [];
         foreach ($data as $username => $user) {
-            $obj = new self();
-            $obj->setUsername($username);
-            $obj->setFirstName($user['FNAME']);
-            $obj->setLastName($user['LNAME']);
-
-            $obj->setPackage($user['PACKAGE']);
-
-            $obj->setWebTemplate($user['WEB_TEMPLATE']);
-            $obj->setBackendTemplate($user['BACKEND_TEMPLATE']);
-            $obj->setProxyTemplate($user['PROXY_TEMPLATE']);
-            $obj->setDnsTemplate($user['DNS_TEMPLATE']);
-
-            $obj->setPackageWebDomains($user['WEB_DOMAINS']);
-            $obj->setPackageWebAliases($user['WEB_ALIASES']);
-            $obj->setPackageDnsDomains($user['DNS_DOMAINS']);
-            $obj->setPackageDnsRecords($user['DNS_RECORDS']);
-            $obj->setPackageMailDomains($user['MAIL_DOMAINS']);
-            $obj->setPackageMailAccounts($user['MAIL_ACCOUNTS']);
-            $obj->setPackageDatabases($user['DATABASES']);
-            $obj->setPackageCronJobs($user['CRON_JOBS']);
-            $obj->setPackageBandwidth($user['BANDWIDTH']);
-
-            $obj->setHome($user['HOME']);
-            $obj->setNs($user['NS']);
-            $obj->setShell($user['SHELL']);
-            $obj->setPackageBackups($user['BACKUPS']);
-
-            $obj->setContact($user['CONTACT']);
-            $obj->setCronReports($user['CRON_REPORTS'] == 'yes');
-            $obj->setRkey($user['RKEY']);
-
-            $obj->setSuspended($user['SUSPENDED'] == 'yes');
-            $obj->setSuspended_users($user['SUSPENDED_USERS']);
-            $obj->setSuspended_web($user['SUSPENDED_WEB']);
-            $obj->setSuspended_dns($user['SUSPENDED_DNS']);
-            $obj->setSuspended_mail($user['SUSPENDED_MAIL']);
-            $obj->setSuspended_db($user['SUSPENDED_DB']);
-            $obj->setSuspended_cron($user['SUSPENDED_CRON']);
-            $obj->setIpAvailable($user['IP_AVAIL']);
-            $obj->setIpOwned($user['IP_OWNED']);
-            $obj->setIp6Available($user['IP6_AVAIL']);
-            $obj->setIp6Owned($user['IP6_OWNED']);
-            $obj->setU_users($user['U_USERS']);
-            $obj->setU_disk($user['U_DISK']);
-            $obj->setU_disk_dirs($user['U_DISK_DIRS']);
-            $obj->setU_disk_web($user['U_DISK_WEB']);
-            $obj->setU_disk_mail($user['U_DISK_MAIL']);
-            $obj->setU_dsk_db($user['U_DISK_DB']);
-            $obj->setU_bandwidth($user['U_BANDWIDTH']);
-            $obj->setU_web_domains($user['U_WEB_DOMAINS']);
-            $obj->setU_web_aliases($user['U_WEB_ALIASES']);
-            $obj->setU_dns_domains($user['U_DNS_DOMAINS']);
-            $obj->setU_dns_records($user['U_DNS_RECORDS']);
-            $obj->setU_mail_domains($user['U_MAIL_DOMAINS']);
-            $obj->setU_mail_dkim($user['U_MAIL_DKIM']);
-            $obj->setU_mail_accounts($user['U_MAIL_ACCOUNTS']);
-            $obj->setU_databases($user['U_DATABASES']);
-            $obj->setU_cron_jobs($user['U_CRON_JOBS']);
-            $obj->setU_backups($user['U_BACKUPS']);
-            $obj->setLanguage($user['LANGUAGE']);
-            $obj->setTime($user['TIME']);
-            $obj->setDate($user['DATE']);
+            $obj = $this->parseUser($username, $user);
+            $result[] = $obj;
         }
+        return $result;
     }
 
+    private function parseUser($username, $user)
+    {
+        $obj = new self();
+        $obj->setUsername($username);
+        $obj->setFirstName($user['FNAME']);
+        $obj->setLastName($user['LNAME']);
+
+        $obj->setPackage($user['PACKAGE']);
+
+        $obj->setWebTemplate($user['WEB_TEMPLATE']);
+        $obj->setBackendTemplate($user['BACKEND_TEMPLATE']);
+        $obj->setProxyTemplate($user['PROXY_TEMPLATE']);
+        $obj->setDnsTemplate($user['DNS_TEMPLATE']);
+
+        $obj->setPackageWebDomains($user['WEB_DOMAINS']);
+        $obj->setPackageWebAliases($user['WEB_ALIASES']);
+        $obj->setPackageDnsDomains($user['DNS_DOMAINS']);
+        $obj->setPackageDnsRecords($user['DNS_RECORDS']);
+        $obj->setPackageMailDomains($user['MAIL_DOMAINS']);
+        $obj->setPackageMailAccounts($user['MAIL_ACCOUNTS']);
+        $obj->setPackageDatabases($user['DATABASES']);
+        $obj->setPackageCronJobs($user['CRON_JOBS']);
+        $obj->setPackageBandwidth($user['BANDWIDTH']);
+
+        $obj->setHome($user['HOME']);
+        $obj->setNs($user['NS']);
+        $obj->setShell($user['SHELL']);
+        $obj->setPackageBackups($user['BACKUPS']);
+
+        $obj->setContact($user['CONTACT']);
+        $obj->setCronReports($user['CRON_REPORTS'] == 'yes');
+        $obj->setRkey($user['RKEY']);
+
+        $obj->setSuspended($user['SUSPENDED'] == 'yes');
+        $obj->setSuspended_users($user['SUSPENDED_USERS']);
+        $obj->setSuspended_web($user['SUSPENDED_WEB']);
+        $obj->setSuspended_dns($user['SUSPENDED_DNS']);
+        $obj->setSuspended_mail($user['SUSPENDED_MAIL']);
+        $obj->setSuspended_db($user['SUSPENDED_DB']);
+        $obj->setSuspended_cron($user['SUSPENDED_CRON']);
+        $obj->setIpAvailable($user['IP_AVAIL']);
+        $obj->setIpOwned($user['IP_OWNED']);
+        $obj->setIp6Available($user['IP6_AVAIL']);
+        $obj->setIp6Owned($user['IP6_OWNED']);
+        $obj->setU_users($user['U_USERS']);
+        $obj->setU_disk($user['U_DISK']);
+        $obj->setU_disk_dirs($user['U_DISK_DIRS']);
+        $obj->setU_disk_web($user['U_DISK_WEB']);
+        $obj->setU_disk_mail($user['U_DISK_MAIL']);
+        $obj->setU_dsk_db($user['U_DISK_DB']);
+        $obj->setU_bandwidth($user['U_BANDWIDTH']);
+        $obj->setU_web_domains($user['U_WEB_DOMAINS']);
+        $obj->setU_web_aliases($user['U_WEB_ALIASES']);
+        $obj->setU_dns_domains($user['U_DNS_DOMAINS']);
+        $obj->setU_dns_records($user['U_DNS_RECORDS']);
+        $obj->setU_mail_domains($user['U_MAIL_DOMAINS']);
+        $obj->setU_mail_dkim($user['U_MAIL_DKIM']);
+        $obj->setU_mail_accounts($user['U_MAIL_ACCOUNTS']);
+        $obj->setU_databases($user['U_DATABASES']);
+        $obj->setU_cron_jobs($user['U_CRON_JOBS']);
+        $obj->setU_backups($user['U_BACKUPS']);
+        $obj->setLanguage($user['LANGUAGE']);
+        $obj->setTime($user['TIME']);
+        $obj->setDate($user['DATE']);
+        return $obj;
+    }
+    
     public function getUsername()
     {
         return $this->username;

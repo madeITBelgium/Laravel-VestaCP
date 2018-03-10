@@ -275,20 +275,20 @@
 |v-list-sys-vesta-updates          |                                                 |                   |         |
 |v-list-sys-vsftpd-config          |                                                 |                   |         |
 |v-list-sys-web-status          |                                                 |                   |         |
-|v-list-user          |                                                 |                   |         |
-|v-list-user-backup          |                                                 |                   |         |
-|v-list-user-backup-exclusions          |                                                 |                   |         |
-|v-list-user-backups          |                                                 |                   |         |
-|v-list-user-favourites          |                                                 |                   |         |
-|v-list-user-ips          |                                                 |                   |         |
-|v-list-user-log          |                                                 |                   |         |
-|v-list-user-notifications          |                                                 |                   |         |
-|v-list-user-ns          |                                                 |                   |         |
-|v-list-user-package          |                                                 |                   |         |
-|v-list-user-packages          |                                                 |                   |         |
-|v-list-users          |                                                 |                   |         |
-|v-list-users-stats          |                                                 |                   |         |
-|v-list-user-stats          |                                                 |                   |         |
+|v-list-user                              | User::get                                       | User              |         |
+|v-list-user-backup                       |                                                 |                   |         |
+|v-list-user-backup-exclusions            |                                                 |                   |         |
+|v-list-user-backups                      |                                                 |                   |         |
+|v-list-user-favourites                   |                                                 |                   |         |
+|v-list-user-ips                          |                                                 |                   |         |
+|v-list-user-log                          |                                                 |                   |         |
+|v-list-user-notifications                |                                                 |                   |         |
+|v-list-user-ns                           |                                                 |                   |         |
+|v-list-user-package                      |                                                 |                   |         |
+|v-list-user-packages                     |                                                 |                   |         |
+|v-list-users                             | User::listUsers                                 | User[]            |         |
+|v-list-users-stats                       |                                                 |                   |         |
+|v-list-user-stats                        |                                                 |                   |         |
 |v-list-web-domain          |                                                 |                   |         |
 |v-list-web-domain-accesslog          |                                                 |                   |         |
 |v-list-web-domain-errorlog          |                                                 |                   |         |
