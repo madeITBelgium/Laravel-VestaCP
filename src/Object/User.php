@@ -68,6 +68,7 @@ class User
     private $u_dns_records;
     private $u_mail_domains;
     private $u_mail_dkim;
+    private $u_mail_accounts;
     private $u_databases;
     private $u_cron_jobs;
     private $u_backups;
@@ -159,7 +160,7 @@ class User
         $obj->setU_dns_records($user['U_DNS_RECORDS']);
         $obj->setU_mail_domains($user['U_MAIL_DOMAINS']);
         $obj->setU_mail_dkim($user['U_MAIL_DKIM']);
-        $obj->setU_mail_accounts($user['U_MAIL_ACCOUNTS']);
+        $obj->setU_ ($user['U_MAIL_ACCOUNTS']);
         $obj->setU_databases($user['U_DATABASES']);
         $obj->setU_cron_jobs($user['U_CRON_JOBS']);
         $obj->setU_backups($user['U_BACKUPS']);
@@ -668,6 +669,16 @@ class User
     public function setU_mail_dkim($u_mail_dkim)
     {
         $this->u_mail_dkim = $u_mail_dkim;
+    }
+
+    public function getU_mail_accounts()
+    {
+        return $this->u_mail_accounts;
+    }
+
+    public function setU_mail_accounts($u_mail_accounts)
+    {
+        $this->u_mail_accounts = $u_mail_accounts;
     }
 
     public function getU_databases()
