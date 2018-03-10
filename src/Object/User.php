@@ -142,8 +142,10 @@ class User
         $obj->setSuspended_cron($user['SUSPENDED_CRON']);
         $obj->setIpAvailable($user['IP_AVAIL']);
         $obj->setIpOwned($user['IP_OWNED']);
-        $obj->setIp6Available($user['IP6_AVAIL']);
-        $obj->setIp6Owned($user['IP6_OWNED']);
+        if(isset($user['IP6_AVAIL']))
+            $obj->setIp6Available($user['IP6_AVAIL']);
+        if(isset($user['IP6_OWNED']))
+            $obj->setIp6Owned($user['IP6_OWNED']);
         $obj->setU_users($user['U_USERS']);
         $obj->setU_disk($user['U_DISK']);
         $obj->setU_disk_dirs($user['U_DISK_DIRS']);

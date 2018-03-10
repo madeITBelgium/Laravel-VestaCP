@@ -51,7 +51,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $translator->shouldReceive('trans')->once()->with('validation.attributes.foo')->andReturn('validation.attributes.foo');
         $factory = new Factory($translator, $container);
         $factory->extend('user', 'MadeITBelgium\VestaCP\Validation\ValidatorExtensions@validateUser', ':attribute must be a valid user');
-        $validator = $factory->make(['foo' => 'madeit.belgium'], ['foo' => 'user']);
+        $validator = $factory->make(['foo' => 'user false'], ['foo' => 'user']);
         $this->assertTrue($validator->fails());
         $messages = $validator->messages();
         $this->assertInstanceOf('Illuminate\Support\MessageBag', $messages);
