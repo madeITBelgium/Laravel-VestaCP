@@ -83,8 +83,7 @@ class User
     {
         if ($command == 'list') {
             return $this->listUsers($data);
-        }
-        else if ($command == 'get') {
+        } elseif ($command == 'get') {
             return $this->listUsers($data)[0];
         }
     }
@@ -96,6 +95,7 @@ class User
             $obj = $this->parseUser($username, $user);
             $result[] = $obj;
         }
+
         return $result;
     }
 
@@ -163,9 +163,10 @@ class User
         $obj->setLanguage($user['LANGUAGE']);
         $obj->setTime($user['TIME']);
         $obj->setDate($user['DATE']);
+
         return $obj;
     }
-    
+
     public function getUsername()
     {
         return $this->username;
