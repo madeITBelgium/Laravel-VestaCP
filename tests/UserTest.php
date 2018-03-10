@@ -176,6 +176,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
         "DISK_QUOTA": "unlimited",
         "BANDWIDTH": "100000",
         "NS": "ns1.domain.tld,ns2.domain.tld",
+        "HOME": "/home/admin",
         "SHELL": "bash",
         "BACKUPS": "3",
         "CONTACT": "info@madeit.be",
