@@ -1,12 +1,10 @@
 <?php
 
-use MadeITBelgium\VestaCP\VestaCP;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
+use MadeITBelgium\VestaCP\VestaCP;
 
 class UserTest extends \PHPUnit_Framework_TestCase
 {
@@ -137,14 +135,14 @@ class UserTest extends \PHPUnit_Framework_TestCase
         }
 }');
         $response = new Response(200, [], $body);
-        
+
         $mock = new MockHandler([
-            $response
+            $response,
         ]);
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
-        
+
         $domainbox->setClient($client);
 
         $user = $domainbox->user();
@@ -219,14 +217,14 @@ class UserTest extends \PHPUnit_Framework_TestCase
         }
 }');
         $response = new Response(200, [], $body);
-        
+
         $mock = new MockHandler([
-            $response
+            $response,
         ]);
 
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
-        
+
         $domainbox->setClient($client);
 
         $user = $domainbox->user();
