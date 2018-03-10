@@ -216,7 +216,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
         }
 }';
         $response = new Response(200, ['Content-Type' => 'application/json'], $body);
-        
+
         $mock = new MockHandler([
             $response,
         ]);
