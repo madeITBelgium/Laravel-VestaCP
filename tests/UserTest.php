@@ -20,7 +20,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $domainbox = new VestaCP('server', 'hash');
 
-        $body = GuzzleHttp\Stream\Stream::factory('{
+        $body = '{
     "admin": {
         "FNAME": "System",
         "LNAME": "Administrator",
@@ -135,8 +135,8 @@ class UserTest extends \PHPUnit_Framework_TestCase
         "TIME": "16:55:23",
         "DATE": "2018-01-13"
         }
-}');
-        $response = new Response(200, [], $body);
+}';
+        $response = new Response(200, ['Content-Type' => 'application/json'], $body);
         
         $mock = new MockHandler([
             $response
@@ -159,7 +159,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $domainbox = new VestaCP('server', 'hash');
 
-        $body = GuzzleHttp\Stream\Stream::factory('{
+        $body = '{
     "admin": {
         "FNAME": "System",
         "LNAME": "Administrator",
@@ -217,8 +217,8 @@ class UserTest extends \PHPUnit_Framework_TestCase
         "TIME": "16:33:45",
         "DATE": "2018-01-13"
         }
-}');
-        $response = new Response(200, [], $body);
+}';
+        $response = new Response(200, ['Content-Type' => 'application/json'], $body);
         
         $mock = new MockHandler([
             $response
