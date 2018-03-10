@@ -124,8 +124,9 @@ class User
         $obj->setPackageCronJobs($user['CRON_JOBS']);
         $obj->setPackageBandwidth($user['BANDWIDTH']);
 
-        if(isset($user['HOME']))
+        if (isset($user['HOME'])) {
             $obj->setHome($user['HOME']);
+        }
         $obj->setNs($user['NS']);
         $obj->setShell($user['SHELL']);
         $obj->setPackageBackups($user['BACKUPS']);
@@ -143,10 +144,12 @@ class User
         $obj->setSuspended_cron($user['SUSPENDED_CRON']);
         $obj->setIpAvailable($user['IP_AVAIL']);
         $obj->setIpOwned($user['IP_OWNED']);
-        if(isset($user['IP6_AVAIL']))
+        if (isset($user['IP6_AVAIL'])) {
             $obj->setIp6Available($user['IP6_AVAIL']);
-        if(isset($user['IP6_OWNED']))
+        }
+        if (isset($user['IP6_OWNED'])) {
             $obj->setIp6Owned($user['IP6_OWNED']);
+        }
         $obj->setU_users($user['U_USERS']);
         $obj->setU_disk($user['U_DISK']);
         $obj->setU_disk_dirs($user['U_DISK_DIRS']);
