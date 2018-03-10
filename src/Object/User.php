@@ -123,8 +123,9 @@ class User
         $obj->setPackageCronJobs($user['CRON_JOBS']);
         $obj->setPackageBandwidth($user['BANDWIDTH']);
 
-        if(isset($user['HOME']))
+        if (isset($user['HOME'])) {
             $obj->setHome($user['HOME']);
+        }
         $obj->setNs($user['NS']);
         $obj->setShell($user['SHELL']);
         $obj->setPackageBackups($user['BACKUPS']);
