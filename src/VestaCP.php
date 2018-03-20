@@ -84,7 +84,7 @@ class VestaCP
 
         $this->lastResultCode = 0;
 
-        if (!$this->isJson($body)) {
+        if (!$this->isJson($body) || is_numeric($body)) {
             $this->checkResultCode($body);
 
             return true;
