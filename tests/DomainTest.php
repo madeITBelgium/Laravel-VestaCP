@@ -12,7 +12,7 @@ class DomainTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
     }
-    
+
     //v-add-domain
     public function testCreateUser()
     {

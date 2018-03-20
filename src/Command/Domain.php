@@ -2,8 +2,6 @@
 
 namespace MadeITBelgium\VestaCP\Command;
 
-use MadeITBelgium\VestaCP\Object\User as ObjectUser;
-
 /**
  * VestaCP API.
  *
@@ -36,24 +34,24 @@ class Domain
     {
         return $this->vestacp;
     }
-    
+
     /*
      * Create new domain
      */
     public function create($user, $domain, $ip = null, $ipv6 = null, $restart = null)
     {
         $request = [$user, $domain];
-        if(!empty($ip)) {
+        if (!empty($ip)) {
             $request[] = $ip;
-            if(!empty($ipv6)) {
+            if (!empty($ipv6)) {
                 $request[] = $ipv6;
-                if(!empty($restart)) {
+                if (!empty($restart)) {
                     $request[] = $restart;
                 }
             }
         }
         $this->vestacp->call('v-add-domain', 'yes', $request);
-        
+
         return true;
     }
 
