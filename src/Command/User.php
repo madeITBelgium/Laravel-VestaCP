@@ -60,24 +60,24 @@ class User
 
         return $user->loadData('get', $response);
     }
-    
+
     /*
      * Create new user
      */
     public function create($user, $password, $email, $package = null, $firstname = null, $lastname = null)
     {
         $request = [$user, $password, $email];
-        if(!empty($package)) {
+        if (!empty($package)) {
             $request[] = $package;
-            if(!empty($firstname)) {
+            if (!empty($firstname)) {
                 $request[] = $firstname;
-                if(!empty($lastname)) {
+                if (!empty($lastname)) {
                     $request[] = $lastname;
                 }
             }
         }
         $this->vestacp->call('v-add-user', 'yes', $request);
-        
+
         return true;
     }
 
