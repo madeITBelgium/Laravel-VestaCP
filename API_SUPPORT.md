@@ -14,17 +14,17 @@
 |v-add-cron-vesta-autoupdate              |                                                 |                   |         |
 |v-add-database                           |                                                 |                   |         |
 |v-add-database-host                      |                                                 |                   |         |
-|v-add-dns-domain          |                                                 |                   |         |
-|v-add-dns-on-web-alias          |                                                 |                   |         |
-|v-add-dns-record          |                                                 |                   |         |
-|v-add-domain          |                                                 |                   |         |
-|v-add-firewall-ban          |                                                 |                   |         |
-|v-add-firewall-chain          |                                                 |                   |         |
-|v-add-firewall-ipv6-ban          |                                                 |                   |         |
-|v-add-firewall-ipv6-chain          |                                                 |                   |         |
-|v-add-firewall-ipv6-rule          |                                                 |                   |         |
-|v-add-firewall-rule          |                                                 |                   |         |
-|v-add-fs-archive          |                                                 |                   |         |
+|v-add-dns-domain                         |                                                 |                   |         |
+|v-add-dns-on-web-alias                   |                                                 |                   |         |
+|v-add-dns-record                         |                                                 |                   |         |
+|v-add-domain                             | Domain::create()                                | Boolean           |         |
+|v-add-firewall-ban                       |                                                 |                   |         |
+|v-add-firewall-chain                     |                                                 |                   |         |
+|v-add-firewall-ipv6-ban                  |                                                 |                   |         |
+|v-add-firewall-ipv6-chain                |                                                 |                   |         |
+|v-add-firewall-ipv6-rule                 |                                                 |                   |         |
+|v-add-firewall-rule                      |                                                 |                   |         |
+|v-add-fs-archive                         |                                                 |                   |         |
 |v-add-fs-directory          |                                                 |                   |         |
 |v-add-fs-file          |                                                 |                   |         |
 |v-add-letsencrypt-domain          |                                                 |                   |         |
@@ -48,11 +48,11 @@
 |v-add-remote-dns-record          |                                                 |                   |         |
 |v-add-sys-firewall          |                                                 |                   |         |
 |v-add-sys-ip          |                                                 |                   |         |
-|v-add-sys-ipv6          |                                                 |                   |         |
-|v-add-sys-quota          |                                                 |                   |         |
-|v-add-sys-sftp-jail          |                                                 |                   |         |
-|v-add-user          |                                                 |                   |         |
-|v-add-user-favourites          |                                                 |                   |         |
+|v-add-sys-ipv6                           |                                                 |                   |         |
+|v-add-sys-quota                          |                                                 |                   |         |
+|v-add-sys-sftp-jail                      |                                                 |                   |         |
+|v-add-user                               | User::create()                                  | Boolean           |         |
+|v-add-user-favourites                    |                                                 |                   |         |
 |v-add-user-notification          |                                                 |                   |         |
 |v-add-user-package          |                                                 |                   |         |
 |v-add-user-sftp-jail          |                                                 |                   |         |

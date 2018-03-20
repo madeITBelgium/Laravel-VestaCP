@@ -136,6 +136,14 @@ class VestaCP
         return $user;
     }
 
+    public function domain()
+    {
+        $domain = new Command\Domain();
+        $domain->setVestaCP($this);
+
+        return $domain;
+    }
+
     public function getLastResultCode()
     {
         return $this->lastResultCode;
