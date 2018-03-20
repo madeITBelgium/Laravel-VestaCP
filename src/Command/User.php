@@ -76,7 +76,9 @@ class User
                 }
             }
         }
-        return $this->vestacp->call('v-add-user', 'yes', $request);
+        $this->vestacp->call('v-add-user', 'yes', $request);
+        
+        return true;
     }
 
     public function getLastResultCode()

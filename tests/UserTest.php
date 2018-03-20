@@ -239,7 +239,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $domainbox = new VestaCP('server', 'hash');
 
         $body = '0';
-        $response = new Response(200, ['Content-Type' => 'application/json'], $body);
+        $response = new Response(200, [], $body);
 
         $mock = new MockHandler([
             $response,
