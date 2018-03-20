@@ -232,4 +232,27 @@ class UserTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('admin', $response->getUsername());
     }
+
+    //v-add-user
+    public function testCreateUser()
+    {
+        $domainbox = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, ['Content-Type' => 'application/json'], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $domainbox->setClient($client);
+
+        $user = $domainbox->user();
+        $response = $user->create('test', 'test', 'test123');
+
+        $this->assertEquals(true, $response);
+    }
 }
