@@ -85,7 +85,7 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('1', $response[0]->getUDisk());
         $this->assertEquals('0', $response[0]->getUBandwidth());
         $this->assertEquals('hosting', $response[0]->getTemplate());
-        $this->assertEquals('www.server3.emeraldcloudhosting.com,server3.ech.be,www.server3.ech.be', $response[0]->getAlais());
+        $this->assertEquals('www.server3.emeraldcloudhosting.com,server3.ech.be,www.server3.ech.be', $response[0]->getAlias());
         $this->assertEquals('', $response[0]->getStats());
         $this->assertEquals('', $response[0]->getStatsUser());
         $this->assertEquals(false, $response[0]->getSsl());
