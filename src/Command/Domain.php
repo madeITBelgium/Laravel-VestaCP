@@ -1,6 +1,9 @@
 <?php
 
 namespace MadeITBelgium\VestaCP\Command;
+use MadeITBelgium\VestaCP\Object\WebDomain as ObjectWebDomain;
+use MadeITBelgium\VestaCP\Object\DNSDomain as ObjectDNSDomain;
+use MadeITBelgium\VestaCP\Object\MailDomain as ObjectMailDomain;
 
 /**
  * VestaCP API.
@@ -35,6 +38,33 @@ class Domain
         return $this->vestacp;
     }
 
+    public function listWebDomains($user)
+    {
+        $response = $this->vestacp->call('v-list-web-domains', '', [$user]);
+
+        $domain = new ObjectWebDomain();
+        
+        return $domain->loadData('list-web', $response);
+    }
+
+    public function listDNSDomains($user)
+    {
+        $response = $this->vestacp->call('v-list-dns-domains', '', [$user]);
+
+        $domain = new ObjectDNSDomain();
+        
+        return $domain->loadData('list-dns', $response);
+    }
+
+    public function listMailDomains($user)
+    {
+        $response = $this->vestacp->call('v-list-mail-domains', '', [$user]);
+
+        $domain = new ObjectMailDomain();
+        
+        return $domain->loadData('list-mail', $response);
+    }
+    
     /*
      * Create new domain
      */
@@ -54,7 +84,37 @@ class Domain
 
         return true;
     }
+    
+    /*
+     * Create FTP User
+     */
+    public function createFtp($user, $domain, $ftp_user, $ftp_password, $ftp_path = null)
+    {
+        $request = [$user, $domain, $ftp_user, $ftp_password];
+        if (!empty($ftp_path)) {
+            $request[] = $ftp_path;
+        }
+        $this->vestacp->call('v-add-web-domain-ftp', 'yes', $request);
 
+        return true;
+    }
+    
+    public function changeFtpPassword($user, $domain, $ftp_user, $ftp_password)
+    {
+        $request = [$user, $domain, $ftp_user, $ftp_password];
+        $this->vestacp->call('v-change-web-domain-ftp-password', 'yes', $request);
+
+        return true;
+    }
+    
+    public function deleteFtpUser($user, $domain, $ftp_user)
+    {
+        $request = [$user, $domain, $ftp_user];
+        $this->vestacp->call('v-delete-web-domain-ftp', 'yes', $request);
+
+        return true;
+    }
+    
     public function getLastResultCode()
     {
         return $this->vestacp->getLastResultCode();

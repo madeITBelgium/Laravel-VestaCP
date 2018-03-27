@@ -20,6 +20,8 @@ class VestaCPServiceProvider extends ServiceProvider
     protected $rules = [
         'user',
         'useravailable',
+        'ipaddress',
+        'ipv6address',
     ];
 
     /**

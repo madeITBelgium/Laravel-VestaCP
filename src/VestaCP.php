@@ -43,6 +43,7 @@ class VestaCP
                     'User-Agent' => 'Made I.T. Vesta SDK V'.$this->version,
                     'Accept'     => 'application/json',
                 ],
+                'verify' => false,
             ]);
         } else {
             $this->client = $client;
@@ -73,9 +74,10 @@ class VestaCP
         foreach ($parameters as $val) {
             $requestData['arg'.$i++] = $val;
         }
-        $requestData['arg'.$i++] = 'json';
-
-        $response = $this->client->request('GET', '/api/');
+        if($returnCode != 'yes') {
+            $requestData['arg'.$i++] = 'json';
+        }
+        $response = $this->client->request('POST', '/api/', ['form_params' => $requestData]);
         if ($response->getStatusCode() == 200) {
             $body = (string) $response->getBody();
         } else {
