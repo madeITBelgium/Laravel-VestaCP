@@ -64,7 +64,7 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($validator->isValidIp('192.168.1.1'));
     }
 
-    public function testValidatorUserFalse()
+    public function testValidatorIpaddressFalse()
     {
         $validator = new MadeITBelgium\VestaCP\Validation\Validator();
 
