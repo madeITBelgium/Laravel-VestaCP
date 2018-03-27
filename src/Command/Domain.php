@@ -48,6 +48,15 @@ class Domain
         return $domain->loadData('list-web', $response);
     }
 
+    public function listWebDomain($user, $domain)
+    {
+        $response = $this->vestacp->call('v-list-web-domain', '', [$user, $domain]);
+
+        $domain = new ObjectWebDomain();
+
+        return $domain->loadData('get-web', $response);
+    }
+
     public function listDNSDomains($user)
     {
         $response = $this->vestacp->call('v-list-dns-domains', '', [$user]);

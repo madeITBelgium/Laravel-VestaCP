@@ -102,6 +102,71 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('2018-01-13', $response[0]->getDate());
     }
 
+    //v-list-web-domain domain
+    public function testListWebDomain()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '{
+    "server3.emeraldcloudhosting.com": {
+        "IP": "209.250.249.53",
+        "IP6": "2001:19f0:5001:722:5400:1ff:fe55:d9b2",
+        "U_DISK": "1",
+        "U_BANDWIDTH": "0",
+        "TPL": "hosting",
+        "ALIAS": "www.server3.emeraldcloudhosting.com,server3.ech.be,www.server3.ech.be",
+        "STATS": "",
+        "STATS_USER": "",
+        "SSL": "no",
+        "SSL_HOME": "same",
+        "LETSENCRYPT": "no",
+        "FTP_USER": "",
+        "FTP_PATH": "",
+        "AUTH_USER": "",
+        "BACKEND": "",
+        "PROXY": "hosting",
+        "PROXY_EXT": "jpg,jpeg,gif,png,ico,svg,css,zip,tgz,gz,rar,bz2,doc,xls,exe,pdf,ppt,txt,odt,ods,odp,odf,tar,wav,bmp,rtf,js,mp3,avi,mpeg,flv,html,htm",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    }
+}';
+        $response = new Response(200, ['Content-Type' => 'application/json'], $body);
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->listWebDomain('admin', 'server3.emeraldcloudhosting.com');
+
+        $this->assertEquals('server3.emeraldcloudhosting.com', $response->getDomainname());
+        $this->assertEquals('209.250.249.53', $response->getIp());
+        $this->assertEquals('2001:19f0:5001:722:5400:1ff:fe55:d9b2', $response->getIp6());
+        $this->assertEquals('1', $response->getUDisk());
+        $this->assertEquals('0', $response->getUBandwidth());
+        $this->assertEquals('hosting', $response->getTemplate());
+        $this->assertEquals('www.server3.emeraldcloudhosting.com,server3.ech.be,www.server3.ech.be', $response->getAlias());
+        $this->assertEquals('', $response->getStats());
+        $this->assertEquals('', $response->getStatsUser());
+        $this->assertEquals(false, $response->getSsl());
+        $this->assertEquals('same', $response->getSslHome());
+        $this->assertEquals(false, $response->getLetsencrypt());
+        $this->assertEquals('', $response->getFtp_user());
+        $this->assertEquals('', $response->getFtp_path());
+        $this->assertEquals('', $response->getAuth_user());
+        $this->assertEquals('', $response->getBackend());
+        $this->assertEquals('hosting', $response->getProxy());
+        $this->assertEquals('jpg,jpeg,gif,png,ico,svg,css,zip,tgz,gz,rar,bz2,doc,xls,exe,pdf,ppt,txt,odt,ods,odp,odf,tar,wav,bmp,rtf,js,mp3,avi,mpeg,flv,html,htm', $response->getProxyExt());
+        $this->assertEquals(false, $response->getSuspended());
+        $this->assertEquals('16:33:48', $response->getTime());
+        $this->assertEquals('2018-01-13', $response->getDate());
+    }
+
     //v-add-web-domain-ftp
     public function testCreateFTPUser()
     {
