@@ -74,7 +74,7 @@ class VestaCP
         foreach ($parameters as $val) {
             $requestData['arg'.$i++] = $val;
         }
-        if($returnCode != 'yes') {
+        if ($returnCode != 'yes') {
             $requestData['arg'.$i++] = 'json';
         }
         $response = $this->client->request('POST', '/api/', ['form_params' => $requestData]);

@@ -34,7 +34,7 @@ class WebDomain
     private $suspended;
     private $time;
     private $date;
-    
+
     public function __construct()
     {
     }
@@ -83,174 +83,217 @@ class WebDomain
         $obj->setSuspended($data['SUSPENDED'] == 'yes');
         $obj->setTime($data['TIME']);
         $obj->setDate($data['DATE']);
+
         return $obj;
     }
-    
-    public function getDomainname(){
+
+    public function getDomainname()
+    {
         return $this->domainname;
     }
 
-    public function setDomainname($domainname){
+    public function setDomainname($domainname)
+    {
         $this->domainname = $domainname;
     }
 
-    public function getIp(){
+    public function getIp()
+    {
         return $this->ip;
     }
 
-    public function setIp($ip){
+    public function setIp($ip)
+    {
         $this->ip = $ip;
     }
 
-    public function getIp6(){
+    public function getIp6()
+    {
         return $this->ip6;
     }
 
-    public function setIp6($ip6){
+    public function setIp6($ip6)
+    {
         $this->ip6 = $ip6;
     }
 
-    public function getUDisk(){
+    public function getUDisk()
+    {
         return $this->uDisk;
     }
 
-    public function setUDisk($uDisk){
+    public function setUDisk($uDisk)
+    {
         $this->uDisk = $uDisk;
     }
 
-    public function getUBandwidth(){
+    public function getUBandwidth()
+    {
         return $this->uBandwidth;
     }
 
-    public function setUBandwidth($uBandwidth){
+    public function setUBandwidth($uBandwidth)
+    {
         $this->uBandwidth = $uBandwidth;
     }
 
-    public function getTemplate(){
+    public function getTemplate()
+    {
         return $this->template;
     }
 
-    public function setTemplate($template){
+    public function setTemplate($template)
+    {
         $this->template = $template;
     }
 
-    public function getAlias(){
+    public function getAlias()
+    {
         return $this->alias;
     }
 
-    public function setAlias($alias){
+    public function setAlias($alias)
+    {
         $this->alias = $alias;
     }
 
-    public function getStats(){
+    public function getStats()
+    {
         return $this->stats;
     }
 
-    public function setStats($stats){
+    public function setStats($stats)
+    {
         $this->stats = $stats;
     }
 
-    public function getStatsUser(){
+    public function getStatsUser()
+    {
         return $this->statsUser;
     }
 
-    public function setStatsUser($statsUser){
+    public function setStatsUser($statsUser)
+    {
         $this->statsUser = $statsUser;
     }
 
-    public function getSsl(){
+    public function getSsl()
+    {
         return $this->ssl;
     }
 
-    public function setSsl($ssl){
+    public function setSsl($ssl)
+    {
         $this->ssl = $ssl;
     }
 
-    public function getSslHome(){
+    public function getSslHome()
+    {
         return $this->sslHome;
     }
 
-    public function setSslHome($sslHome){
+    public function setSslHome($sslHome)
+    {
         $this->sslHome = $sslHome;
     }
 
-    public function getLetsencrypt(){
+    public function getLetsencrypt()
+    {
         return $this->letsencrypt;
     }
 
-    public function setLetsencrypt($letsencrypt){
+    public function setLetsencrypt($letsencrypt)
+    {
         $this->letsencrypt = $letsencrypt;
     }
 
-    public function getFtp_user(){
+    public function getFtp_user()
+    {
         return $this->ftp_user;
     }
 
-    public function setFtp_user($ftp_user){
+    public function setFtp_user($ftp_user)
+    {
         $this->ftp_user = $ftp_user;
     }
 
-    public function getFtp_path(){
+    public function getFtp_path()
+    {
         return $this->ftp_path;
     }
 
-    public function setFtp_path($ftp_path){
+    public function setFtp_path($ftp_path)
+    {
         $this->ftp_path = $ftp_path;
     }
 
-    public function getAuth_user(){
+    public function getAuth_user()
+    {
         return $this->auth_user;
     }
 
-    public function setAuth_user($auth_user){
+    public function setAuth_user($auth_user)
+    {
         $this->auth_user = $auth_user;
     }
 
-    public function getBackend(){
+    public function getBackend()
+    {
         return $this->backend;
     }
 
-    public function setBackend($backend){
+    public function setBackend($backend)
+    {
         $this->backend = $backend;
     }
 
-    public function getProxy(){
+    public function getProxy()
+    {
         return $this->proxy;
     }
 
-    public function setProxy($proxy){
+    public function setProxy($proxy)
+    {
         $this->proxy = $proxy;
     }
 
-    public function getProxyExt(){
+    public function getProxyExt()
+    {
         return $this->proxyExt;
     }
 
-    public function setProxyExt($proxyExt){
+    public function setProxyExt($proxyExt)
+    {
         $this->proxyExt = $proxyExt;
     }
 
-    public function getSuspended(){
+    public function getSuspended()
+    {
         return $this->suspended;
     }
 
-    public function setSuspended($suspended){
+    public function setSuspended($suspended)
+    {
         $this->suspended = $suspended;
     }
 
-    public function getTime(){
+    public function getTime()
+    {
         return $this->time;
     }
 
-    public function setTime($time){
+    public function setTime($time)
+    {
         $this->time = $time;
     }
 
-    public function getDate(){
+    public function getDate()
+    {
         return $this->date;
     }
 
-    public function setDate($date){
+    public function setDate($date)
+    {
         $this->date = $date;
     }
 }
