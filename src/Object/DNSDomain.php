@@ -26,7 +26,7 @@ class DNSDomain
     private $suspended;
     private $time;
     private $date;
-    
+
     public function __construct()
     {
     }
@@ -67,110 +67,137 @@ class DNSDomain
         $obj->setSuspended($data['SUSPENDED'] == 'yes');
         $obj->setTime($data['TIME']);
         $obj->setDate($data['DATE']);
+
         return $obj;
     }
-    
-    public function getDomainname(){
-		return $this->domainname;
-	}
 
-	public function setDomainname($domainname){
-		$this->domainname = $domainname;
-	}
+    public function getDomainname()
+    {
+        return $this->domainname;
+    }
 
-	public function getIp(){
-		return $this->ip;
-	}
+    public function setDomainname($domainname)
+    {
+        $this->domainname = $domainname;
+    }
 
-	public function setIp($ip){
-		$this->ip = $ip;
-	}
+    public function getIp()
+    {
+        return $this->ip;
+    }
 
-	public function getIp6(){
-		return $this->ip6;
-	}
+    public function setIp($ip)
+    {
+        $this->ip = $ip;
+    }
 
-	public function setIp6($ip6){
-		$this->ip6 = $ip6;
-	}
+    public function getIp6()
+    {
+        return $this->ip6;
+    }
 
-	public function getTemplate(){
-		return $this->template;
-	}
+    public function setIp6($ip6)
+    {
+        $this->ip6 = $ip6;
+    }
 
-	public function setTemplate($template){
-		$this->template = $template;
-	}
+    public function getTemplate()
+    {
+        return $this->template;
+    }
 
-	public function getTtl(){
-		return $this->ttl;
-	}
+    public function setTemplate($template)
+    {
+        $this->template = $template;
+    }
 
-	public function setTtl($ttl){
-		$this->ttl = $ttl;
-	}
+    public function getTtl()
+    {
+        return $this->ttl;
+    }
 
-	public function getExp(){
-		return $this->exp;
-	}
+    public function setTtl($ttl)
+    {
+        $this->ttl = $ttl;
+    }
 
-	public function setExp($exp){
-		$this->exp = $exp;
-	}
+    public function getExp()
+    {
+        return $this->exp;
+    }
 
-	public function getSoa(){
-		return $this->soa;
-	}
+    public function setExp($exp)
+    {
+        $this->exp = $exp;
+    }
 
-	public function setSoa($soa){
-		$this->soa = $soa;
-	}
+    public function getSoa()
+    {
+        return $this->soa;
+    }
 
-	public function getSerial(){
-		return $this->serial;
-	}
+    public function setSoa($soa)
+    {
+        $this->soa = $soa;
+    }
 
-	public function setSerial($serial){
-		$this->serial = $serial;
-	}
+    public function getSerial()
+    {
+        return $this->serial;
+    }
 
-	public function getSrc(){
-		return $this->src;
-	}
+    public function setSerial($serial)
+    {
+        $this->serial = $serial;
+    }
 
-	public function setSrc($src){
-		$this->src = $src;
-	}
+    public function getSrc()
+    {
+        return $this->src;
+    }
 
-	public function getRecords(){
-		return $this->records;
-	}
+    public function setSrc($src)
+    {
+        $this->src = $src;
+    }
 
-	public function setRecords($records){
-		$this->records = $records;
-	}
+    public function getRecords()
+    {
+        return $this->records;
+    }
 
-	public function getSuspended(){
-		return $this->suspended;
-	}
+    public function setRecords($records)
+    {
+        $this->records = $records;
+    }
 
-	public function setSuspended($suspended){
-		$this->suspended = $suspended;
-	}
+    public function getSuspended()
+    {
+        return $this->suspended;
+    }
 
-	public function getTime(){
-		return $this->time;
-	}
+    public function setSuspended($suspended)
+    {
+        $this->suspended = $suspended;
+    }
 
-	public function setTime($time){
-		$this->time = $time;
-	}
+    public function getTime()
+    {
+        return $this->time;
+    }
 
-	public function getDate(){
-		return $this->date;
-	}
+    public function setTime($time)
+    {
+        $this->time = $time;
+    }
 
-	public function setDate($date){
-		$this->date = $date;
-	}
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
 }
