@@ -35,7 +35,7 @@ class DomainTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(true, $response);
     }
-    
+
     //v-list-users
     public function testListWebDomains()
     {
