@@ -57,4 +57,22 @@ class ValidatorTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Illuminate\Support\MessageBag', $messages);
         $this->assertEquals('foo must be a valid user', $messages->first('foo'));
     }
+    
+    public function testValidatorIpaddressTrue()
+    {
+        $validator = new MadeITBelgium\VestaCP\Validation\Validator();
+        $this->assertTrue($validator->isValidIp('192.168.1.1'));
+    }
+
+    public function testValidatorUserFalse()
+    {
+        $validator = new MadeITBelgium\VestaCP\Validation\Validator();
+        
+        $this->assertFalse($validator->isValidIp('192.168.1.256'));
+        $this->assertFalse($validator->isValidIp('192.168.1 256'));
+        $this->assertFalse($validator->isValidIp('256.256.256.256'));
+        $this->assertFalse($validator->isValidIp('1.1.1.'));
+        $this->assertFalse($validator->isValidIp('2.2.2'));
+        $this->assertFalse($validator->isValidIp('2.2'));
+    }
 }

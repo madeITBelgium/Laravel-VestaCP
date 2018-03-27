@@ -16,7 +16,7 @@ class DomainTest extends \PHPUnit_Framework_TestCase
     //v-add-domain
     public function testCreateUser()
     {
-        $domainbox = new VestaCP('server', 'hash');
+        $vestacp = new VestaCP('server', 'hash');
 
         $body = '0';
         $response = new Response(200, [], $body);
@@ -28,20 +28,18 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $domainbox->setClient($client);
+        $vestacp->setClient($client);
 
-        $domain = $domainbox->domain();
+        $domain = $vestacp->domain();
         $response = $domain->create('admin', 'test.com');
 
         $this->assertEquals(true, $response);
     }
     
-    
-
     //v-list-users
     public function testListWebDomains()
     {
-        $domainbox = new VestaCP('server', 'hash');
+        $vestacp = new VestaCP('server', 'hash');
 
         $body = '{
     "server3.emeraldcloudhosting.com": {
@@ -75,10 +73,10 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $domainbox->setClient($client);
+        $vestacp->setClient($client);
 
-        $user = $domainbox->user();
-        $response = $user->listWebDomains('admin');
+        $domain = $vestacp->domain();
+        $response = $domain->listWebDomains('admin');
 
         $this->assertEquals(1, count($response));
         $this->assertEquals('server3.emeraldcloudhosting.com', $response[0]->getDomainname());
@@ -107,7 +105,7 @@ class DomainTest extends \PHPUnit_Framework_TestCase
     //v-add-web-domain-ftp
     public function testCreateFTPUser()
     {
-        $domainbox = new VestaCP('server', 'hash');
+        $vestacp = new VestaCP('server', 'hash');
 
         $body = '0';
         $response = new Response(200, [], $body);
@@ -119,9 +117,9 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $domainbox->setClient($client);
+        $vestacp->setClient($client);
 
-        $domain = $domainbox->domain();
+        $domain = $vestacp->domain();
         $response = $domain->createFtp('admin', 'test.com', 'test', 'test123');
 
         $this->assertEquals(true, $response);
@@ -130,7 +128,7 @@ class DomainTest extends \PHPUnit_Framework_TestCase
     //v-change-web-domain-ftp-password
     public function testChangeFTPUserPassword()
     {
-        $domainbox = new VestaCP('server', 'hash');
+        $vestacp = new VestaCP('server', 'hash');
 
         $body = '0';
         $response = new Response(200, [], $body);
@@ -142,9 +140,9 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $domainbox->setClient($client);
+        $vestacp->setClient($client);
 
-        $domain = $domainbox->domain();
+        $domain = $vestacp->domain();
         $response = $domain->changeFtpPassword('admin', 'test.com', 'admin_test', 'test123');
 
         $this->assertEquals(true, $response);
@@ -153,7 +151,7 @@ class DomainTest extends \PHPUnit_Framework_TestCase
     //v-delete-web-domain-ftp
     public function testDeleteFTPUser()
     {
-        $domainbox = new VestaCP('server', 'hash');
+        $vestacp = new VestaCP('server', 'hash');
 
         $body = '0';
         $response = new Response(200, [], $body);
@@ -165,9 +163,9 @@ class DomainTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $domainbox->setClient($client);
+        $vestacp->setClient($client);
 
-        $domain = $domainbox->domain();
+        $domain = $vestacp->domain();
         $response = $domain->deleteFtpUser('admin', 'test.com', 'admin_test');
 
         $this->assertEquals(true, $response);

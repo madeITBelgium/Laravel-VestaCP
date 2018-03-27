@@ -16,7 +16,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     //v-list-users
     public function testListUsers()
     {
-        $domainbox = new VestaCP('server', 'hash');
+        $vestacp = new VestaCP('server', 'hash');
 
         $body = '{
     "admin": {
@@ -142,9 +142,9 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $domainbox->setClient($client);
+        $vestacp->setClient($client);
 
-        $user = $domainbox->user();
+        $user = $vestacp->user();
         $response = $user->listUsers();
 
         $this->assertEquals(2, count($response));
@@ -154,7 +154,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     //v-list-user
     public function testListUser()
     {
-        $domainbox = new VestaCP('server', 'hash');
+        $vestacp = new VestaCP('server', 'hash');
 
         $body = '{
     "admin": {
@@ -225,9 +225,9 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $domainbox->setClient($client);
+        $vestacp->setClient($client);
 
-        $user = $domainbox->user();
+        $user = $vestacp->user();
         $response = $user->get('admin');
 
         $this->assertEquals('admin', $response->getUsername());
@@ -236,7 +236,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     //v-add-user
     public function testCreateUser()
     {
-        $domainbox = new VestaCP('server', 'hash');
+        $vestacp = new VestaCP('server', 'hash');
 
         $body = '0';
         $response = new Response(200, [], $body);
@@ -248,9 +248,9 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $domainbox->setClient($client);
+        $vestacp->setClient($client);
 
-        $user = $domainbox->user();
+        $user = $vestacp->user();
         $response = $user->create('test', 'test', 'test123');
 
         $this->assertEquals(true, $response);

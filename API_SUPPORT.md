@@ -221,9 +221,9 @@
 |v-list-database-hosts          |                                                 |                   |         |
 |v-list-databases          |                                                 |                   |         |
 |v-list-database-types          |                                                 |                   |         |
-|v-list-dns-domain          |                                                 |                   |         |
-|v-list-dns-domains          |                                                 |                   |         |
-|v-list-dns-records          |                                                 |                   |         |
+|v-list-dns-domain                        |                                                 |                   |         |
+|v-list-dns-domains                       | Domain::listDNSDomains                          | DNSDomain[]       | 0.0.1   |
+|v-list-dns-records                       |                                                 |                   |         |
 |v-list-dns-template          |                                                 |                   |         |
 |v-list-dns-templates          |                                                 |                   |         |
 |v-list-firewall          |                                                 |                   |         |
@@ -239,9 +239,9 @@
 |v-list-mail-accounts          |                                                 |                   |         |
 |v-list-mail-domain          |                                                 |                   |         |
 |v-list-mail-domain-dkim          |                                                 |                   |         |
-|v-list-mail-domain-dkim-dns          |                                                 |                   |         |
-|v-list-mail-domains          |                                                 |                   |         |
-|v-list-mail-domain-ssl          |                                                 |                   |         |
+|v-list-mail-domain-dkim-dns              |                                                 |                   |         |
+|v-list-mail-domains                      | Domain::listMailDomains                         | MailDomain[]      | 0.0.1   |
+|v-list-mail-domain-ssl                   |                                                 |                   |         |
 |v-list-plugin          |                                                 |                   |         |
 |v-list-plugins          |                                                 |                   |         |
 |v-list-remote-dns-hosts          |                                                 |                   |         |
@@ -275,7 +275,7 @@
 |v-list-sys-vesta-updates          |                                                 |                   |         |
 |v-list-sys-vsftpd-config          |                                                 |                   |         |
 |v-list-sys-web-status          |                                                 |                   |         |
-|v-list-user                              | User::get                                       | User              |         |
+|v-list-user                              | User::get                                       | User              | 0.0.1   |
 |v-list-user-backup                       |                                                 |                   |         |
 |v-list-user-backup-exclusions            |                                                 |                   |         |
 |v-list-user-backups                      |                                                 |                   |         |
@@ -286,13 +286,13 @@
 |v-list-user-ns                           |                                                 |                   |         |
 |v-list-user-package                      |                                                 |                   |         |
 |v-list-user-packages                     |                                                 |                   |         |
-|v-list-users                             | User::listUsers                                 | User[]            |         |
+|v-list-users                             | User::listUsers                                 | User[]            | 0.0.1   |
 |v-list-users-stats                       |                                                 |                   |         |
 |v-list-user-stats                        |                                                 |                   |         |
-|v-list-web-domain          |                                                 |                   |         |
-|v-list-web-domain-accesslog          |                                                 |                   |         |
-|v-list-web-domain-errorlog          |                                                 |                   |         |
-|v-list-web-domains          |                                                 |                   |         |
+|v-list-web-domain                        |                                                 |                   |         |
+|v-list-web-domain-accesslog              |                                                 |                   |         |
+|v-list-web-domain-errorlog               |                                                 |                   |         |
+|v-list-web-domains                       | Domain::listWebDomains                          | WebDomain[]       | 0.0.1   |
 |v-list-web-domain-ssl          |                                                 |                   |         |
 |v-list-web-stats          |                                                 |                   |         |
 |v-list-web-templates          |                                                 |                   |         |
