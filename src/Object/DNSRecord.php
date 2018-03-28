@@ -20,7 +20,7 @@ class DNSRecord
     private $priority;
     private $value;
     private $suspended;
-    
+
     public function __construct()
     {
     }
@@ -54,54 +54,67 @@ class DNSRecord
         $obj->setSuspended($data['SUSPENDED'] == 'yes');
         $obj->setTime($data['TIME']);
         $obj->setDate($data['DATE']);
+
         return $obj;
     }
-    
-    public function getId(){
+
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function setId($id){
+    public function setId($id)
+    {
         $this->id = $id;
     }
 
-    public function getRecord(){
+    public function getRecord()
+    {
         return $this->record;
     }
 
-    public function setRecord($record){
+    public function setRecord($record)
+    {
         $this->record = $record;
     }
-    
-    public function getType(){
+
+    public function getType()
+    {
         return $this->type;
     }
 
-    public function setType($type){
+    public function setType($type)
+    {
         $this->type = $type;
     }
 
-    public function getPriority(){
+    public function getPriority()
+    {
         return $this->priority;
     }
 
-    public function setPriority($priority){
+    public function setPriority($priority)
+    {
         $this->priority = $priority;
     }
 
-    public function getValue(){
+    public function getValue()
+    {
         return $this->value;
     }
 
-    public function setValue($value){
+    public function setValue($value)
+    {
         $this->value = $value;
     }
 
-    public function getSuspended(){
+    public function getSuspended()
+    {
         return $this->suspended;
     }
 
-    public function setSuspended($suspended){
+    public function setSuspended($suspended)
+    {
         $this->suspended = $suspended;
     }
 }

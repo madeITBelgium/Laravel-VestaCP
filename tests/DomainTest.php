@@ -493,7 +493,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $response = $domain->listDNSRecords('admin', 'server3.emeraldcloudhosting.com');
 
         $this->assertEquals(17, count($response));
-        
+
         $record = $response[0];
         $this->assertEquals('1', $record->getId());
         $this->assertEquals('@', $record->getRecord());
@@ -503,8 +503,6 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(false, $record->getSuspended());
         $this->assertEquals('12:25:32', $record->getTime());
         $this->assertEquals('2018-01-14', $record->getDate());
-        
-        
     }
 
     //v-add-dns-domain
