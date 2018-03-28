@@ -410,6 +410,21 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $response = $domain->createFtp('admin', 'test.com', 'test', 'test123');
 
         $this->assertEquals(true, $response);
+        
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+        $response = $domain->createFtp('admin', 'test.com', 'test', 'test123', '/home/admin/web/test.com/public_html');
+
+        $this->assertEquals(true, $response);
     }
 
     //v-change-web-domain-ftp-password
@@ -456,5 +471,29 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $response = $domain->deleteFtpUser('admin', 'test.com', 'admin_test');
 
         $this->assertEquals(true, $response);
+    }
+    
+    //v-add-domain
+    public function testCreateDomainAllParams()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->create('test', 'test.com', '192.168.0.1', '::1', 'no');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
     }
 }

@@ -123,6 +123,7 @@ class User
         $obj->setPackageDatabases($user['DATABASES']);
         $obj->setPackageCronJobs($user['CRON_JOBS']);
         $obj->setPackageBandwidth($user['BANDWIDTH']);
+        $obj->setPackageDiskQuota($user['DISK_QUOTA']);
 
         if (isset($user['HOME'])) {
             $obj->setHome($user['HOME']);
@@ -144,11 +145,11 @@ class User
         $obj->setSuspended_cron($user['SUSPENDED_CRON']);
         $obj->setIpAvailable($user['IP_AVAIL']);
         $obj->setIpOwned($user['IP_OWNED']);
-        if (isset($user['IP6_AVAIL'])) {
-            $obj->setIp6Available($user['IP6_AVAIL']);
+        if (isset($user['IPV6_AVAIL'])) {
+            $obj->setIp6Available($user['IPV6_AVAIL']);
         }
-        if (isset($user['IP6_OWNED'])) {
-            $obj->setIp6Owned($user['IP6_OWNED']);
+        if (isset($user['IPV6_OWNED'])) {
+            $obj->setIp6Owned($user['IPV6_OWNED']);
         }
         $obj->setU_users($user['U_USERS']);
         $obj->setU_disk($user['U_DISK']);
@@ -160,6 +161,7 @@ class User
         $obj->setU_web_domains($user['U_WEB_DOMAINS']);
         $obj->setU_web_aliases($user['U_WEB_ALIASES']);
         $obj->setU_dns_domains($user['U_DNS_DOMAINS']);
+        $obj->setU_web_ssl($user['U_WEB_SSL']);
         $obj->setU_dns_records($user['U_DNS_RECORDS']);
         $obj->setU_mail_domains($user['U_MAIL_DOMAINS']);
         $obj->setU_mail_dkim($user['U_MAIL_DKIM']);

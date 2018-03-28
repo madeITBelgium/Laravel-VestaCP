@@ -147,9 +147,4 @@ class Domain
     {
         return $this->vestacp->getLastResultCode();
     }
-
-    public function getLastResultMessage()
-    {
-        $this->vestacp->getLastResultMessage();
-    }
 }
