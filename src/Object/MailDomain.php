@@ -14,7 +14,7 @@ namespace MadeITBelgium\VestaCP\Object;
 class MailDomain
 {
     use GeneralDomain;
-    
+
     private $antivirus;
     private $antispam;
     private $dkim;

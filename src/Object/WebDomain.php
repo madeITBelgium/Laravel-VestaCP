@@ -14,7 +14,7 @@ namespace MadeITBelgium\VestaCP\Object;
 class WebDomain
 {
     use GeneralDomain;
-    
+
     private $uDisk;
     private $uBandwidth;
     private $template;
