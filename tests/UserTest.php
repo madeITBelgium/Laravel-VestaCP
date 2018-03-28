@@ -6,11 +6,19 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use MadeITBelgium\VestaCP\VestaCP;
 
-class UserTest extends \PHPUnit_Framework_TestCase
+class UserTest extends \PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
         parent::setUp();
+    }
+
+    public function testConstruct()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+        $user = $vestacp->user();
+
+        $this->assertEquals($vestacp, $user->getVestaCP());
     }
 
     //v-list-users
@@ -254,5 +262,30 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $response = $user->create('test', 'test', 'test123');
 
         $this->assertEquals(true, $response);
+        $this->assertEquals(0, $user->getLastResultCode());
+    }
+
+    //v-add-user
+    public function testCreateUserAllParams()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $user = $vestacp->user();
+        $response = $user->create('test', 'test', 'test123', 'default', 'firstname', 'lastname');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $user->getLastResultCode());
     }
 }

@@ -55,6 +55,11 @@ class VestaCP
         $this->client = $client;
     }
 
+    public function getClient()
+    {
+        return $this->client;
+    }
+
     /**
      * Execute API call.
      *
@@ -87,6 +92,7 @@ class VestaCP
         $this->lastResultCode = 0;
 
         if (!$this->isJson($body) || is_numeric($body)) {
+            $this->lastResultCode = $body;
             $this->checkResultCode($body);
 
             return true;
@@ -149,10 +155,5 @@ class VestaCP
     public function getLastResultCode()
     {
         return $this->lastResultCode;
-    }
-
-    public function getLastResultMessage()
-    {
-        $this->lastResultMessage;
     }
 }

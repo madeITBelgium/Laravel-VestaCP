@@ -6,11 +6,19 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use MadeITBelgium\VestaCP\VestaCP;
 
-class DomainTest extends \PHPUnit_Framework_TestCase
+class DomainTest extends \PHPUnit\Framework\TestCase
 {
     public function setUp()
     {
         parent::setUp();
+    }
+
+    public function testConstruct()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+        $domain = $vestacp->domain();
+
+        $this->assertEquals($vestacp, $domain->getVestaCP());
     }
 
     //v-add-domain
