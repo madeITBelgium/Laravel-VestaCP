@@ -18,7 +18,7 @@
             <file>src/VestaCPFacade.php</file>
             <file>src/VestaCPServiceProvider.php</file>
             <file>src/config/vestacp.php</file>
-            <file>src/lang/en/valdation.php</file>
+            <file>src/lang/en/validation.php</file>
         </blacklist>
         <whitelist>
             <directory suffeix=".php">./src</directory>
@@ -26,7 +26,7 @@
                 <file>src/VestaCPFacade.php</file>
                 <file>src/VestaCPServiceProvider.php</file>
                 <file>src/config/vestacp.php</file>
-                <file>src/lang/en/valdation.php</file>
+                <file>src/lang/en/validation.php</file>
             </exclude>
         </whitelist>
     </filter>
