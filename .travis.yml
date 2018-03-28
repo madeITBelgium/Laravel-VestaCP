@@ -7,7 +7,7 @@ php:
   - nightly
 
 before_install:
-- composer install --dev
+- composer install
  
 script:
 - ./vendor/bin/phpunit --coverage-clover ./tests/logs/clover.xml

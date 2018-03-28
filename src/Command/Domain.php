@@ -66,6 +66,15 @@ class Domain
         return $domain->loadData('list-dns', $response);
     }
 
+    public function listDNSDomain($user, $domain)
+    {
+        $response = $this->vestacp->call('v-list-dns-domain', '', [$user, $domain]);
+
+        $domain = new ObjectDNSDomain();
+
+        return $domain->loadData('get-dns', $response);
+    }
+
     public function listMailDomains($user)
     {
         $response = $this->vestacp->call('v-list-mail-domains', '', [$user]);
@@ -75,6 +84,15 @@ class Domain
         return $domain->loadData('list-mail', $response);
     }
 
+    public function listMailDomain($user, $domain)
+    {
+        $response = $this->vestacp->call('v-list-mail-domain', '', [$user, $domain]);
+
+        $domain = new ObjectMailDomain();
+
+        return $domain->loadData('get-mail', $response);
+    }
+    
     /*
      * Create new domain
      */
