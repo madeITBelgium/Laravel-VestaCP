@@ -221,7 +221,7 @@
 |v-list-database-hosts                    |                                                 |                   |         |
 |v-list-databases                         |                                                 |                   |         |
 |v-list-database-types                    |                                                 |                   |         |
-|v-list-dns-domain                        |                                                 |                   |         |
+|v-list-dns-domain                        | Domain::listDNSDomain                           | DNSDomain         | 0.0.1   |
 |v-list-dns-domains                       | Domain::listDNSDomains                          | DNSDomain[]       | 0.0.1   |
 |v-list-dns-records                       |                                                 |                   |         |
 |v-list-dns-template                      |                                                 |                   |         |

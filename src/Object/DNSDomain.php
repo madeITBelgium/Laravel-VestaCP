@@ -13,9 +13,8 @@ namespace MadeITBelgium\VestaCP\Object;
  */
 class DNSDomain
 {
-    private $domainname;
-    private $ip;
-    private $ip6;
+    use GeneralDomain;
+    
     private $template;
     private $ttl;
     private $exp;
@@ -23,9 +22,6 @@ class DNSDomain
     private $serial;
     private $src;
     private $records;
-    private $suspended;
-    private $time;
-    private $date;
 
     public function __construct()
     {
@@ -69,36 +65,6 @@ class DNSDomain
         $obj->setDate($data['DATE']);
 
         return $obj;
-    }
-
-    public function getDomainname()
-    {
-        return $this->domainname;
-    }
-
-    public function setDomainname($domainname)
-    {
-        $this->domainname = $domainname;
-    }
-
-    public function getIp()
-    {
-        return $this->ip;
-    }
-
-    public function setIp($ip)
-    {
-        $this->ip = $ip;
-    }
-
-    public function getIp6()
-    {
-        return $this->ip6;
-    }
-
-    public function setIp6($ip6)
-    {
-        $this->ip6 = $ip6;
     }
 
     public function getTemplate()
@@ -169,35 +135,5 @@ class DNSDomain
     public function setRecords($records)
     {
         $this->records = $records;
-    }
-
-    public function getSuspended()
-    {
-        return $this->suspended;
-    }
-
-    public function setSuspended($suspended)
-    {
-        $this->suspended = $suspended;
-    }
-
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    public function setTime($time)
-    {
-        $this->time = $time;
-    }
-
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    public function setDate($date)
-    {
-        $this->date = $date;
     }
 }

@@ -13,16 +13,14 @@ namespace MadeITBelgium\VestaCP\Object;
  */
 class MailDomain
 {
-    private $domainname;
+    use GeneralDomain;
+    
     private $antivirus;
     private $antispam;
     private $dkim;
     private $catchall;
     private $accounts;
     private $uDisk;
-    private $suspended;
-    private $time;
-    private $date;
 
     public function __construct()
     {
@@ -63,16 +61,6 @@ class MailDomain
         $obj->setDate($data['DATE']);
 
         return $obj;
-    }
-
-    public function getDomainname()
-    {
-        return $this->domainname;
-    }
-
-    public function setDomainname($domainname)
-    {
-        $this->domainname = $domainname;
     }
 
     public function getAntivirus()
@@ -133,35 +121,5 @@ class MailDomain
     public function setUDisk($uDisk)
     {
         $this->uDisk = $uDisk;
-    }
-
-    public function getSuspended()
-    {
-        return $this->suspended;
-    }
-
-    public function setSuspended($suspended)
-    {
-        $this->suspended = $suspended;
-    }
-
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    public function setTime($time)
-    {
-        $this->time = $time;
-    }
-
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    public function setDate($date)
-    {
-        $this->date = $date;
     }
 }

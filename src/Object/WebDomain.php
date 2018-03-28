@@ -13,9 +13,8 @@ namespace MadeITBelgium\VestaCP\Object;
  */
 class WebDomain
 {
-    private $domainname;
-    private $ip;
-    private $ip6;
+    use GeneralDomain;
+    
     private $uDisk;
     private $uBandwidth;
     private $template;
@@ -31,9 +30,6 @@ class WebDomain
     private $backend;
     private $proxy;
     private $proxyExt;
-    private $suspended;
-    private $time;
-    private $date;
 
     public function __construct()
     {
@@ -85,36 +81,6 @@ class WebDomain
         $obj->setDate($data['DATE']);
 
         return $obj;
-    }
-
-    public function getDomainname()
-    {
-        return $this->domainname;
-    }
-
-    public function setDomainname($domainname)
-    {
-        $this->domainname = $domainname;
-    }
-
-    public function getIp()
-    {
-        return $this->ip;
-    }
-
-    public function setIp($ip)
-    {
-        $this->ip = $ip;
-    }
-
-    public function getIp6()
-    {
-        return $this->ip6;
-    }
-
-    public function setIp6($ip6)
-    {
-        $this->ip6 = $ip6;
     }
 
     public function getUDisk()
@@ -270,30 +236,5 @@ class WebDomain
     public function getSuspended()
     {
         return $this->suspended;
-    }
-
-    public function setSuspended($suspended)
-    {
-        $this->suspended = $suspended;
-    }
-
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    public function setTime($time)
-    {
-        $this->time = $time;
-    }
-
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    public function setDate($date)
-    {
-        $this->date = $date;
     }
 }
