@@ -14,7 +14,7 @@ namespace MadeITBelgium\VestaCP\Object;
 class DNSDomain
 {
     use GeneralDomain;
-    
+
     private $template;
     private $ttl;
     private $exp;
