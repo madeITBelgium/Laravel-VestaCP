@@ -410,7 +410,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $response = $domain->createFtp('admin', 'test.com', 'test', 'test123');
 
         $this->assertEquals(true, $response);
-        
+
         $body = '0';
         $response = new Response(200, [], $body);
 
@@ -472,7 +472,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(true, $response);
     }
-    
+
     //v-add-domain
     public function testCreateDomainAllParams()
     {
