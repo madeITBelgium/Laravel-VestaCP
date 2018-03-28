@@ -92,7 +92,7 @@ class Domain
 
         return $domain->loadData('get-mail', $response);
     }
-    
+
     /*
      * Create new domain
      */

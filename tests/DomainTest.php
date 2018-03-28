@@ -237,8 +237,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(false, $response[0]->getSuspended());
         $this->assertEquals('16:33:48', $response[0]->getTime());
         $this->assertEquals('2018-01-13', $response[0]->getDate());
-        
-        
+
         $this->assertEquals('server3.ech.be', $response[1]->getDomainname());
         $this->assertEquals('', $response[1]->getIp());
         $this->assertEquals('', $response[1]->getIp6());
