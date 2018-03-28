@@ -14,9 +14,9 @@
 |v-add-cron-vesta-autoupdate              |                                                 |                   |         |
 |v-add-database                           |                                                 |                   |         |
 |v-add-database-host                      |                                                 |                   |         |
-|v-add-dns-domain                         |                                                 |                   |         |
+|v-add-dns-domain                         | Domain::createDNS                               | Boolean           | 0.0.1   |
 |v-add-dns-on-web-alias                   |                                                 |                   |         |
-|v-add-dns-record                         |                                                 |                   |         |
+|v-add-dns-record                         | Domain::createDNSRecord                         | Boolean           | 0.0.1   |
 |v-add-domain                             | Domain::create                                  | Boolean           | 0.0.1   |
 |v-add-firewall-ban                       |                                                 |                   |         |
 |v-add-firewall-chain                     |                                                 |                   |         |
@@ -141,11 +141,11 @@
 |v-delete-database                        |                                                 |                   |         |
 |v-delete-database-host                   |                                                 |                   |         |
 |v-delete-databases                       |                                                 |                   |         |
-|v-delete-dns-domain                      |                                                 |                   |         |
+|v-delete-dns-domain                      | Domain::deleteDNS                               | Boolean           | 0.0.1   |
 |v-delete-dns-domains                     |                                                 |                   |         |
 |v-delete-dns-domains-src                 |                                                 |                   |         |
 |v-delete-dns-on-web-alias                |                                                 |                   |         |
-|v-delete-dns-record                      |                                                 |                   |         |
+|v-delete-dns-record                      | Domain::deleteDNSRecord                         | Boolean           | 0.0.1   |
 |v-delete-domain                          |                                                 |                   |         |
 |v-delete-firewall-ban                    |                                                 |                   |         |
 |v-delete-firewall-chain                  |                                                 |                   |         |

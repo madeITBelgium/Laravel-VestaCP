@@ -507,6 +507,102 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         
     }
 
+    //v-add-dns-domain
+    public function testCreateDNSDomainAllParams()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->createDNS('test', 'test.com', '192.168.0.1', '::1', ['ns1.ech.be'], 'no');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
+    }
+
+    //v-add-dns-record
+    public function testCreateDNSRecordAllParams()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->createDNSRecord('admin', 'test.com', 'www', 'A', '192.168.1.1', '1', '1', 'no');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
+    }
+
+    //v-delete-dns-domain
+    public function testDeleteDNSDomain()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->deleteDNS('test', 'test.com');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
+    }
+
+    //v-delete-dns-record
+    public function testDeleteDNSRecord()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->deleteDNSRecord('admin', 'test.com', 1);
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
+    }
+
     //v-list-mail-domains user
     public function testListMailDomains()
     {

@@ -87,6 +87,65 @@ class Domain
         return $domain->loadData('get-records', $response);
     }
 
+    /*
+     * Create new DNS domain
+     */
+    public function createDNS($user, $domain, $ip, $ipv6, $ns = [], $restart = null)
+    {
+        $request = [$user, $domain, $ip, $ipv6];
+        if (!is_array($ns) || count($ns) > 0 && count($ns) < 9) {
+            $request = array_merge($request, $ns);
+            if (!empty($restart)) {
+                $request[] = $restart;
+            }
+        }
+        $this->vestacp->call('v-add-dns-domain', 'yes', $request);
+
+        return true;
+    }
+
+    /*
+     * Create new DNS record
+     */
+    public function createDNSRecord($user, $domain, $record, $type, $value, $priority = null, $id = null, $restart = null)
+    {
+        $request = [$user, $domain, $record, $type, $value];
+        if (!empty($priority)) {
+            $request[] = $priority;
+            if (!empty($id)) {
+                $request[] = $id;
+                if (!empty($restart)) {
+                    $request[] = $restart;
+                }
+            }
+        }
+        $this->vestacp->call('v-add-dns-record', 'yes', $request);
+
+        return true;
+    }
+
+    /*
+     * Delete new DNS domain
+     */
+    public function deleteDNS($user, $domain)
+    {
+        $request = [$user, $domain];
+        $this->vestacp->call('v-delete-dns-domain', 'yes', $request);
+
+        return true;
+    }
+
+    /*
+     * Delete new DNS record
+     */
+    public function deleteDNSRecord($user, $domain, $id)
+    {
+        $request = [$user, $domain, $id];
+        $this->vestacp->call('v-delete-dns-record', 'yes', $request);
+
+        return true;
+    }
+
     /* MAIL */
     public function listMailDomains($user)
     {
