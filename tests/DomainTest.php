@@ -302,6 +302,211 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('2018-01-13', $response->getDate());
     }
 
+    //v-list-dns-records user domain
+    public function testListDNSRecords()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '{
+    "1": {
+        "RECORD": "@",
+        "TYPE": "NS",
+        "PRIORITY": "",
+        "VALUE": "ns1.ech.be.",
+        "ID": "1",
+        "SUSPENDED": "no",
+        "TIME": "12:25:32",
+        "DATE": "2018-01-14"
+    },
+    "2": {
+        "RECORD": "@",
+        "TYPE": "NS",
+        "PRIORITY": "",
+        "VALUE": "ns2.ech.be.",
+        "ID": "2",
+        "SUSPENDED": "no",
+        "TIME": "12:25:20",
+        "DATE": "2018-01-14"
+    },
+    "9": {
+        "RECORD": "@",
+        "TYPE": "A",
+        "PRIORITY": "",
+        "VALUE": "209.250.249.53",
+        "ID": "9",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "10": {
+        "RECORD": "mail",
+        "TYPE": "A",
+        "PRIORITY": "",
+        "VALUE": "209.250.249.53",
+        "ID": "10",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "11": {
+        "RECORD": "www",
+        "TYPE": "A",
+        "PRIORITY": "",
+        "VALUE": "209.250.249.53",
+        "ID": "11",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "12": {
+        "RECORD": "pop",
+        "TYPE": "A",
+        "PRIORITY": "",
+        "VALUE": "209.250.249.53",
+        "ID": "12",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "13": {
+        "RECORD": "ftp",
+        "TYPE": "A",
+        "PRIORITY": "",
+        "VALUE": "209.250.249.53",
+        "ID": "13",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "14": {
+        "RECORD": "@",
+        "TYPE": "MX",
+        "PRIORITY": "10",
+        "VALUE": "mail.server3.emeraldcloudhosting.com.",
+        "ID": "14",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "15": {
+        "RECORD": "@",
+        "TYPE": "TXT",
+        "PRIORITY": "",
+        "VALUE": "\"v=spf1 a mx ip4:209.250.249.53 ip6:2001:19f0:5001:722:5400:1ff:fe55:d9b2 ?all\"",
+        "ID": "15",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "16": {
+        "RECORD": "_dmarc",
+        "TYPE": "TXT",
+        "PRIORITY": "",
+        "VALUE": "\"v=DMARC1; p=none\"",
+        "ID": "16",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "17": {
+        "RECORD": "@",
+        "TYPE": "AAAA",
+        "PRIORITY": "",
+        "VALUE": "2001:19f0:5001:722:5400:1ff:fe55:d9b2",
+        "ID": "17",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "18": {
+        "RECORD": "mail",
+        "TYPE": "AAAA",
+        "PRIORITY": "",
+        "VALUE": "2001:19f0:5001:722:5400:1ff:fe55:d9b2",
+        "ID": "18",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "19": {
+        "RECORD": "www",
+        "TYPE": "AAAA",
+        "PRIORITY": "",
+        "VALUE": "2001:19f0:5001:722:5400:1ff:fe55:d9b2",
+        "ID": "19",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "20": {
+        "RECORD": "pop",
+        "TYPE": "AAAA",
+        "PRIORITY": "",
+        "VALUE": "2001:19f0:5001:722:5400:1ff:fe55:d9b2",
+        "ID": "20",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "21": {
+        "RECORD": "ftp",
+        "TYPE": "AAAA",
+        "PRIORITY": "",
+        "VALUE": "2001:19f0:5001:722:5400:1ff:fe55:d9b2",
+        "ID": "21",
+        "SUSPENDED": "no",
+        "TIME": "16:33:48",
+        "DATE": "2018-01-13"
+    },
+    "22": {
+        "RECORD": "_domainkey",
+        "TYPE": "TXT",
+        "PRIORITY": "",
+        "VALUE": "\"t=y; o=~;\"",
+        "ID": "22",
+        "SUSPENDED": "no",
+        "TIME": "16:33:49",
+        "DATE": "2018-01-13"
+    },
+    "23": {
+        "RECORD": "mail._domainkey",
+        "TYPE": "TXT",
+        "PRIORITY": "",
+        "VALUE": "\"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCyg3pycHloj5AFA8U6MRj2UdGFRZAT/FtsSZW9PDZKnNA0nieMUR2LJ+9ajAwokbNxkLR/ehR8yrKgkMuak4jHmteVgnqVNRrvk+Mo2a1OJ0cVmM9CCOxsFIDiR1IlWiNrM+uPWLQNNpx6qH5Hb19ZNWvN5j34mRWap9DD6UL31QIDAQAB\"",
+        "ID": "23",
+        "SUSPENDED": "no",
+        "TIME": "16:33:49",
+        "DATE": "2018-01-13"
+    }
+}';
+        $response = new Response(200, ['Content-Type' => 'application/json'], $body);
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->listDNSRecords('admin', 'server3.emeraldcloudhosting.com');
+
+        $this->assertEquals(17, count($response));
+        
+        $record = $response[0];
+        $this->assertEquals('1', $record->getId());
+        $this->assertEquals('@', $record->getRecord());
+        $this->assertEquals('NS', $record->getType());
+        $this->assertEquals('', $record->getPriority());
+        $this->assertEquals('ns1.ech.be.', $record->getValue());
+        $this->assertEquals(false, $record->getSuspended());
+        $this->assertEquals('12:25:32', $record->getTime());
+        $this->assertEquals('2018-01-14', $record->getDate());
+        
+        
+    }
+
     //v-list-mail-domains user
     public function testListMailDomains()
     {

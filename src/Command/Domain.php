@@ -3,6 +3,7 @@
 namespace MadeITBelgium\VestaCP\Command;
 
 use MadeITBelgium\VestaCP\Object\DNSDomain as ObjectDNSDomain;
+use MadeITBelgium\VestaCP\Object\DNSRecord as ObjectDNSRecord;
 use MadeITBelgium\VestaCP\Object\MailDomain as ObjectMailDomain;
 use MadeITBelgium\VestaCP\Object\WebDomain as ObjectWebDomain;
 
@@ -39,6 +40,7 @@ class Domain
         return $this->vestacp;
     }
 
+    /* WEB */
     public function listWebDomains($user)
     {
         $response = $this->vestacp->call('v-list-web-domains', '', [$user]);
@@ -57,6 +59,7 @@ class Domain
         return $domain->loadData('get-web', $response);
     }
 
+    /* DNS */
     public function listDNSDomains($user)
     {
         $response = $this->vestacp->call('v-list-dns-domains', '', [$user]);
@@ -75,6 +78,16 @@ class Domain
         return $domain->loadData('get-dns', $response);
     }
 
+    public function listDNSRecords($user, $domain)
+    {
+        $response = $this->vestacp->call('v-list-dns-records', '', [$user, $domain]);
+
+        $domain = new ObjectDNSRecord();
+
+        return $domain->loadData('get-records', $response);
+    }
+
+    /* MAIL */
     public function listMailDomains($user)
     {
         $response = $this->vestacp->call('v-list-mail-domains', '', [$user]);
@@ -127,6 +140,9 @@ class Domain
         return true;
     }
 
+    /*
+     * Update FTP users password
+     */
     public function changeFtpPassword($user, $domain, $ftp_user, $ftp_password)
     {
         $request = [$user, $domain, $ftp_user, $ftp_password];
@@ -135,6 +151,9 @@ class Domain
         return true;
     }
 
+    /*
+     * Delete FTP user
+     */
     public function deleteFtpUser($user, $domain, $ftp_user)
     {
         $request = [$user, $domain, $ftp_user];

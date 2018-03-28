@@ -223,7 +223,7 @@
 |v-list-database-types                    |                                                 |                   |         |
 |v-list-dns-domain                        | Domain::listDNSDomain                           | DNSDomain         | 0.0.1   |
 |v-list-dns-domains                       | Domain::listDNSDomains                          | DNSDomain[]       | 0.0.1   |
-|v-list-dns-records                       |                                                 |                   |         |
+|v-list-dns-records                       | Domain::listDNSRecords                          | DNSRecord[]       | 0.0.1   |
 |v-list-dns-template                      |                                                 |                   |         |
 |v-list-dns-templates                     |                                                 |                   |         |
 |v-list-firewall                          |                                                 |                   |         |
