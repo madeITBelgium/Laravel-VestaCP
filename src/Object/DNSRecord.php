@@ -13,14 +13,13 @@ namespace MadeITBelgium\VestaCP\Object;
  */
 class DNSRecord
 {
+    use DateTime;
     private $id;
     private $record;
     private $type;
     private $priority;
     private $value;
     private $suspended;
-    private $time;
-    private $date;
     
     public function __construct()
     {
@@ -104,21 +103,5 @@ class DNSRecord
 
     public function setSuspended($suspended){
         $this->suspended = $suspended;
-    }
-
-    public function getTime(){
-        return $this->time;
-    }
-
-    public function setTime($time){
-        $this->time = $time;
-    }
-
-    public function getDate(){
-        return $this->date;
-    }
-
-    public function setDate($date){
-        $this->date = $date;
     }
 }

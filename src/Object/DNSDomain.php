@@ -13,7 +13,7 @@ namespace MadeITBelgium\VestaCP\Object;
  */
 class DNSDomain
 {
-    use GeneralDomain;
+    use GeneralDomain, DateTime;
 
     private $template;
     private $ttl;

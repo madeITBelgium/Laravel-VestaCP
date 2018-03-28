@@ -17,8 +17,6 @@ trait GeneralDomain
     private $suspended;
     private $ip;
     private $ip6;
-    private $time;
-    private $date;
 
     public function getDomainname()
     {
@@ -58,25 +56,5 @@ trait GeneralDomain
     public function setSuspended($suspended)
     {
         $this->suspended = $suspended;
-    }
-
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    public function setTime($time)
-    {
-        $this->time = $time;
-    }
-
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    public function setDate($date)
-    {
-        $this->date = $date;
     }
 }

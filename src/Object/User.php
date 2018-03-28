@@ -13,6 +13,8 @@ namespace MadeITBelgium\VestaCP\Object;
  */
 class User
 {
+    use DateTime;
+    
     private $username;
     private $firstName;
     private $lastName;
@@ -73,8 +75,6 @@ class User
     private $u_cron_jobs;
     private $u_backups;
     private $language;
-    private $time;
-    private $date;
 
     public function __construct()
     {
@@ -724,25 +724,5 @@ class User
     public function setLanguage($language)
     {
         $this->language = $language;
-    }
-
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    public function setTime($time)
-    {
-        $this->time = $time;
-    }
-
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    public function setDate($date)
-    {
-        $this->date = $date;
     }
 }
