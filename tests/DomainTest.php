@@ -600,7 +600,55 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(true, $response);
         $this->assertEquals(0, $domain->getLastResultCode());
     }
+    
+    //v-add-mail-domain
+    public function testCreateMainDomain()
+    {
+        $vestacp = new VestaCP('server', 'hash');
 
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->createMail('test', 'test.com');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
+    }
+    
+    //v-add-mail-account
+    public function testCreateMainAccount()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->createMailAccount('test', 'test.com', 'info', 'test123', 'unlimited');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
+    }
+    
     //v-list-mail-domains user
     public function testListMailDomains()
     {

@@ -1,4 +1,4 @@
-# API Support check vestaCP for more information. (12/412)
+# API Support check vestaCP for more information. (21/412)
 
 
 | Endpoint                                | SDK Class::Function                             | Output            | Version |
@@ -31,12 +31,12 @@
 |v-add-letsencrypt-mail-domain            |                                                 |                   |         |
 |v-add-letsencrypt-user                   |                                                 |                   |         |
 |v-add-letsencrypt-vesta                  |                                                 |                   |         |
-|v-add-mail-account                       |                                                 |                   |         |
+|v-add-mail-account                       | Domain::createMailAcccount                      | Boolean           | 0.0.1   |
 |v-add-mail-account-alias                 |                                                 |                   |         |
 |v-add-mail-account-autoreply             |                                                 |                   |         |
 |v-add-mail-account-forward               |                                                 |                   |         |
 |v-add-mail-account-fwd-only              |                                                 |                   |         |
-|v-add-mail-domain                        |                                                 |                   |         |
+|v-add-mail-domain                        | Domain::createMail                              | Boolean           | 0.0.1   |
 |v-add-mail-domain-antispam               |                                                 |                   |         |
 |v-add-mail-domain-antivirus              |                                                 |                   |         |
 |v-add-mail-domain-catchall               |                                                 |                   |         |
@@ -236,7 +236,7 @@
 |v-list-letsencrypt-user                  |                                                 |                   |         |
 |v-list-mail-account                      |                                                 |                   |         |
 |v-list-mail-account-autoreply            |                                                 |                   |         |
-|v-list-mail-accounts                     |                                                 |                   |         |
+|v-list-mail-accounts                     | Domain::listMailAccounts                        | MailAccount[]     | 0.0.1   |
 |v-list-mail-domain                       | Domain::listMailDomain                          | MailDomain        | 0.0.1   |
 |v-list-mail-domain-dkim                  |                                                 |                   |         |
 |v-list-mail-domain-dkim-dns              |                                                 |                   |         |
@@ -262,19 +262,19 @@
 |v-list-sys-mysql-config                  |                                                 |                   |         |
 |v-list-sys-network-status                |                                                 |                   |         |
 |v-list-sys-nginx-config                  |                                                 |                   |         |
-|v-list-sys-pgsql-config          |                                                 |                   |         |
-|v-list-sys-php-config          |                                                 |                   |         |
-|v-list-sys-proftpd-config          |                                                 |                   |         |
-|v-list-sys-rrd          |                                                 |                   |         |
-|v-list-sys-services          |                                                 |                   |         |
-|v-list-sys-shells          |                                                 |                   |         |
-|v-list-sys-spamd-config          |                                                 |                   |         |
-|v-list-sys-users          |                                                 |                   |         |
-|v-list-sys-vesta-autoupdate          |                                                 |                   |         |
-|v-list-sys-vesta-ssl          |                                                 |                   |         |
-|v-list-sys-vesta-updates          |                                                 |                   |         |
-|v-list-sys-vsftpd-config          |                                                 |                   |         |
-|v-list-sys-web-status          |                                                 |                   |         |
+|v-list-sys-pgsql-config                  |                                                 |                   |         |
+|v-list-sys-php-config                    |                                                 |                   |         |
+|v-list-sys-proftpd-config                |                                                 |                   |         |
+|v-list-sys-rrd                           |                                                 |                   |         |
+|v-list-sys-services                      |                                                 |                   |         |
+|v-list-sys-shells                        |                                                 |                   |         |
+|v-list-sys-spamd-config                  |                                                 |                   |         |
+|v-list-sys-users                         |                                                 |                   |         |
+|v-list-sys-vesta-autoupdate              |                                                 |                   |         |
+|v-list-sys-vesta-ssl                     |                                                 |                   |         |
+|v-list-sys-vesta-updates                 |                                                 |                   |         |
+|v-list-sys-vsftpd-config                 |                                                 |                   |         |
+|v-list-sys-web-status                    |                                                 |                   |         |
 |v-list-user                              | User::get                                       | User              | 0.0.1   |
 |v-list-user-backup                       |                                                 |                   |         |
 |v-list-user-backup-exclusions            |                                                 |                   |         |
