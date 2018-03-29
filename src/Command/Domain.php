@@ -155,26 +155,26 @@ class Domain
     public function createMail($user, $domain)
     {
         $request = [$user, $domain];
-        
+
         $this->vestacp->call('v-add-mail-domain', 'yes', $request);
 
         return true;
     }
-    
+
     /*
      * v-add-mail-account USER DOMAIN ACCOUNT PASSWORD [QUOTA]
      */
     public function createMailAccount($user, $domain, $account, $password, $quota = null)
     {
         $request = [$user, $domain, $account, $password];
-        if($quota != null) {
+        if ($quota != null) {
             $request[] = $quota;
         }
         $this->vestacp->call('v-add-mail-account', 'yes', $request);
 
         return true;
     }
-    
+
     public function listMailDomains($user)
     {
         $response = $this->vestacp->call('v-list-mail-domains', '', [$user]);
