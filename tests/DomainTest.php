@@ -493,7 +493,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $response = $domain->listDNSRecords('admin', 'server3.emeraldcloudhosting.com');
 
         $this->assertEquals(17, count($response));
-        
+
         $record = $response[0];
         $this->assertEquals('1', $record->getId());
         $this->assertEquals('@', $record->getRecord());
@@ -735,7 +735,6 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('16:33:49', $response->getTime());
         $this->assertEquals('2018-01-13', $response->getDate());
     }
-    
 
     //v-list-mail-accounts user domain
     public function testListMailAccounts()
@@ -780,7 +779,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $response = $domain->listMailAccounts('admin', 'server3.emeraldcloudhosting.com');
 
         $this->assertEquals(2, count($response));
-        
+
         $record = $response[0];
         $this->assertEquals('test', $record->getAccount());
         $this->assertEquals('', $record->getAlias());

@@ -4,8 +4,8 @@ namespace MadeITBelgium\VestaCP\Command;
 
 use MadeITBelgium\VestaCP\Object\DNSDomain as ObjectDNSDomain;
 use MadeITBelgium\VestaCP\Object\DNSRecord as ObjectDNSRecord;
-use MadeITBelgium\VestaCP\Object\MailDomain as ObjectMailDomain;
 use MadeITBelgium\VestaCP\Object\MailAccount as ObjectMailAccount;
+use MadeITBelgium\VestaCP\Object\MailDomain as ObjectMailDomain;
 use MadeITBelgium\VestaCP\Object\WebDomain as ObjectWebDomain;
 
 /**
@@ -201,8 +201,6 @@ class Domain
 
         return $domain->loadData('get-accounts', $response);
     }
-    
-    
 
     /*
      * Create new domain

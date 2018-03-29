@@ -14,7 +14,7 @@ namespace MadeITBelgium\VestaCP\Object;
 class User
 {
     use DateTime;
-    
+
     private $username;
     private $firstName;
     private $lastName;
