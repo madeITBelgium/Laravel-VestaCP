@@ -22,10 +22,9 @@ class MailAccount
     private $quota;
     private $uDisk;
     private $suspended;
-    
+
     public function __construct()
     {
-        
     }
 
     public function loadData($command, $data)
@@ -59,70 +58,87 @@ class MailAccount
         $obj->setSuspended($data['SUSPENDED'] == 'yes');
         $obj->setTime($data['TIME']);
         $obj->setDate($data['DATE']);
+
         return $obj;
     }
-    
-    public function getAccount(){
+
+    public function getAccount()
+    {
         return $this->account;
     }
 
-    public function setAccount($account){
+    public function setAccount($account)
+    {
         $this->account = $account;
     }
 
-    public function getAlias(){
+    public function getAlias()
+    {
         return $this->alias;
     }
 
-    public function setAlias($alias){
+    public function setAlias($alias)
+    {
         $this->alias = $alias;
     }
 
-    public function getFwd(){
+    public function getFwd()
+    {
         return $this->fwd;
     }
 
-    public function setFwd($fwd){
+    public function setFwd($fwd)
+    {
         $this->fwd = $fwd;
     }
 
-    public function getFwd_only(){
+    public function getFwd_only()
+    {
         return $this->fwd_only;
     }
 
-    public function setFwd_only($fwd_only){
+    public function setFwd_only($fwd_only)
+    {
         $this->fwd_only = $fwd_only;
     }
-    
-    public function getAutoreply(){
+
+    public function getAutoreply()
+    {
         return $this->autoreply;
     }
 
-    public function setAutoreply($autoreply){
+    public function setAutoreply($autoreply)
+    {
         $this->autoreply = $autoreply;
     }
 
-    public function getQuota(){
+    public function getQuota()
+    {
         return $this->quota;
     }
 
-    public function setQuota($quota){
+    public function setQuota($quota)
+    {
         $this->quota = $quota;
     }
 
-    public function getUDisk(){
+    public function getUDisk()
+    {
         return $this->uDisk;
     }
 
-    public function setUDisk($uDisk){
+    public function setUDisk($uDisk)
+    {
         $this->uDisk = $uDisk;
     }
 
-    public function getSuspended(){
+    public function getSuspended()
+    {
         return $this->suspended;
     }
 
-    public function setSuspended($suspended){
+    public function setSuspended($suspended)
+    {
         $this->suspended = $suspended;
     }
 }
