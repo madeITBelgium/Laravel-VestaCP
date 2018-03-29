@@ -503,8 +503,6 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(false, $record->getSuspended());
         $this->assertEquals('12:25:32', $record->getTime());
         $this->assertEquals('2018-01-14', $record->getDate());
-        
-        
     }
 
     //v-add-dns-domain
@@ -688,6 +686,64 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(false, $response->getSuspended());
         $this->assertEquals('16:33:49', $response->getTime());
         $this->assertEquals('2018-01-13', $response->getDate());
+    }
+    
+
+    //v-list-mail-accounts user domain
+    public function testListMailAccounts()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '{
+    "test": {
+        "ALIAS": "",
+        "FWD": "",
+        "FWD_ONLY": "",
+        "AUTOREPLY": "no",
+        "QUOTA": "unlimited",
+        "U_DISK": "0",
+        "SUSPENDED": "no",
+        "TIME": "12:56:18",
+        "DATE": "2017-07-14"
+    },
+    "info": {
+        "ALIAS": "",
+        "FWD": "",
+        "FWD_ONLY": "",
+        "AUTOREPLY": "no",
+        "QUOTA": "unlimited",
+        "U_DISK": "23",
+        "SUSPENDED": "no",
+        "TIME": "12:56:26",
+        "DATE": "2017-07-14"
+    }
+}';
+        $response = new Response(200, ['Content-Type' => 'application/json'], $body);
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->listMailAccounts('admin', 'server3.emeraldcloudhosting.com');
+
+        $this->assertEquals(2, count($response));
+        
+        $record = $response[0];
+        $this->assertEquals('test', $record->getAccount());
+        $this->assertEquals('', $record->getAlias());
+        $this->assertEquals('', $record->getFwd());
+        $this->assertEquals('', $record->getFwd_only());
+        $this->assertEquals(false, $record->getAutoreply());
+        $this->assertEquals('unlimited', $record->getQuota());
+        $this->assertEquals('0', $record->getUDisk());
+        $this->assertEquals(false, $record->getSuspended());
+        $this->assertEquals('12:56:18', $record->getTime());
+        $this->assertEquals('2017-07-14', $record->getDate());
     }
 
     //v-add-web-domain-ftp
