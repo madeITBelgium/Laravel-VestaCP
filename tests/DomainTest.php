@@ -600,7 +600,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(true, $response);
         $this->assertEquals(0, $domain->getLastResultCode());
     }
-    
+
     //v-add-mail-domain
     public function testCreateMainDomain()
     {
@@ -624,7 +624,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(true, $response);
         $this->assertEquals(0, $domain->getLastResultCode());
     }
-    
+
     //v-add-mail-account
     public function testCreateMainAccount()
     {
@@ -648,7 +648,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(true, $response);
         $this->assertEquals(0, $domain->getLastResultCode());
     }
-    
+
     //v-list-mail-domains user
     public function testListMailDomains()
     {
