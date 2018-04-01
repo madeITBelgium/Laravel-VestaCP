@@ -152,6 +152,14 @@ class VestaCP
         return $domain;
     }
 
+    public function database()
+    {
+        $database = new Command\Database();
+        $database->setVestaCP($this);
+
+        return $database;
+    }
+
     public function getLastResultCode()
     {
         return $this->lastResultCode;

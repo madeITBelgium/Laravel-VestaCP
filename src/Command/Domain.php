@@ -203,6 +203,28 @@ class Domain
     }
 
     /*
+     * Delete new DNS domain
+     */
+    public function deleteMail($user, $domain)
+    {
+        $request = [$user, $domain];
+        $this->vestacp->call('v-delete-mail-domain', 'yes', $request);
+
+        return true;
+    }
+
+    /*
+     * Delete new DNS record
+     */
+    public function deleteMailAccount($user, $domain, $account)
+    {
+        $request = [$user, $domain, $account];
+        $this->vestacp->call('v-delete-mail-account', 'yes', $request);
+
+        return true;
+    }
+
+    /*
      * Create new domain
      */
     public function create($user, $domain, $ip = null, $ipv6 = null, $restart = null)

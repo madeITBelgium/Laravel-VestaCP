@@ -792,6 +792,54 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('12:56:18', $record->getTime());
         $this->assertEquals('2017-07-14', $record->getDate());
     }
+    
+    //v-delete-mail-domain
+    public function testDeleteMailDomain()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->deleteMail('test', 'test.com');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
+    }
+
+    //v-delete-mail-account
+    public function testDeleteMailAccount()
+    {
+        $vestacp = new VestaCP('server', 'hash');
+
+        $body = '0';
+        $response = new Response(200, [], $body);
+
+        $mock = new MockHandler([
+            $response,
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $vestacp->setClient($client);
+
+        $domain = $vestacp->domain();
+        $response = $domain->deleteMailAccount('test', 'test.com', 'test');
+
+        $this->assertEquals(true, $response);
+        $this->assertEquals(0, $domain->getLastResultCode());
+    }
 
     //v-add-web-domain-ftp
     public function testCreateFTPUser()
