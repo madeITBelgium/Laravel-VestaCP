@@ -22,7 +22,7 @@ class Database
     private $charset;
     private $u_disk;
     private $suspended;
-    
+
     public function __construct()
     {
     }
@@ -62,60 +62,74 @@ class Database
 
         return $obj;
     }
-    
-    public function getDatabase(){
+
+    public function getDatabase()
+    {
         return $this->database;
     }
 
-    public function setDatabase($database){
+    public function setDatabase($database)
+    {
         $this->database = $database;
     }
 
-    public function getDbuser(){
+    public function getDbuser()
+    {
         return $this->dbuser;
     }
 
-    public function setDbuser($dbuser){
+    public function setDbuser($dbuser)
+    {
         $this->dbuser = $dbuser;
     }
 
-    public function getHost(){
+    public function getHost()
+    {
         return $this->host;
     }
 
-    public function setHost($host){
+    public function setHost($host)
+    {
         $this->host = $host;
     }
 
-    public function getType(){
+    public function getType()
+    {
         return $this->type;
     }
 
-    public function setType($type){
+    public function setType($type)
+    {
         $this->type = $type;
     }
 
-    public function getCharset(){
+    public function getCharset()
+    {
         return $this->charset;
     }
 
-    public function setCharset($charset){
+    public function setCharset($charset)
+    {
         $this->charset = $charset;
     }
 
-    public function getU_disk(){
+    public function getU_disk()
+    {
         return $this->u_disk;
     }
 
-    public function setU_disk($u_disk){
+    public function setU_disk($u_disk)
+    {
         $this->u_disk = $u_disk;
     }
 
-    public function getSuspended(){
+    public function getSuspended()
+    {
         return $this->suspended;
     }
 
-    public function setSuspended($suspended){
+    public function setSuspended($suspended)
+    {
         $this->suspended = $suspended;
     }
 }

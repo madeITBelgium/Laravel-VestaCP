@@ -792,7 +792,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals('12:56:18', $record->getTime());
         $this->assertEquals('2017-07-14', $record->getDate());
     }
-    
+
     //v-delete-mail-domain
     public function testDeleteMailDomain()
     {
