@@ -37,7 +37,7 @@ class Database
         return $this->vestacp;
     }
 
-    /* 
+    /*
      * v-list-databases USER
      */
     public function listDatabases($user)
@@ -49,7 +49,7 @@ class Database
         return $database->loadData('list-db', $response);
     }
 
-    /* 
+    /*
      * v-list-database USER DATABASE
      */
     public function listDatabase($user, $database)
@@ -60,7 +60,6 @@ class Database
 
         return $database->loadData('get-db', $response);
     }
-
 
     /*
      * v-add-database USER DATABASE DBUSER DBPASS [TYPE] [HOST] [CHARSET]
@@ -77,7 +76,7 @@ class Database
                 }
             }
         }
-        
+
         $this->vestacp->call('v-add-database', 'yes', $request);
 
         return true;
@@ -89,12 +88,12 @@ class Database
     public function delete($user, $database)
     {
         $request = [$user, $database];
-        
+
         $this->vestacp->call('v-delete-database', 'yes', $request);
 
         return true;
     }
-    
+
     public function getLastResultCode()
     {
         return $this->vestacp->getLastResultCode();
