@@ -61,7 +61,7 @@ class WebDomain
         $obj = new self();
         $obj->setDomainname($domainname);
         $obj->setIp($data['IP']);
-        if(isset($data['IP6'])) {
+        if (isset($data['IP6'])) {
             $obj->setIp6($data['IP6']);
         }
         $obj->setUDisk($data['U_DISK']);
@@ -82,7 +82,7 @@ class WebDomain
         $obj->setSuspended($data['SUSPENDED'] == 'yes');
         $obj->setTime($data['TIME']);
         $obj->setDate($data['DATE']);
-        if(isset($data['DOCROOT'])) {
+        if (isset($data['DOCROOT'])) {
             $obj->setDocroot($data['DOCROOT']);
         }
 
@@ -238,7 +238,7 @@ class WebDomain
     {
         $this->proxyExt = $proxyExt;
     }
-    
+
     public function getDocroot()
     {
         return $this->docroot;
