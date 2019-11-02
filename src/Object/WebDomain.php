@@ -30,6 +30,7 @@ class WebDomain
     private $backend;
     private $proxy;
     private $proxyExt;
+    private $docroot;
 
     public function __construct()
     {
@@ -79,6 +80,7 @@ class WebDomain
         $obj->setSuspended($data['SUSPENDED'] == 'yes');
         $obj->setTime($data['TIME']);
         $obj->setDate($data['DATE']);
+        $obj->setDocroot($data['DOCROOT']);
 
         return $obj;
     }
@@ -231,6 +233,16 @@ class WebDomain
     public function setProxyExt($proxyExt)
     {
         $this->proxyExt = $proxyExt;
+    }
+    
+    public function getDocroot()
+    {
+        return $this->docroot;
+    }
+
+    public function setDocroot($docroot)
+    {
+        $this->docroot = $docroot;
     }
 
     public function getSuspended()

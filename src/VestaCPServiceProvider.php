@@ -3,6 +3,7 @@
 namespace MadeITBelgium\VestaCP;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 /**
  * VestaCP API.
@@ -72,7 +73,7 @@ class VestaCPServiceProvider extends ServiceProvider
 
     protected function extendValidator($rule)
     {
-        $method = 'validate'.studly_case($rule);
+        $method = 'validate'.Str::studly($rule);
         $translation = $this->app['translator']->get('vestacp::validation');
         $this->app['validator']->extend($rule, 'MadeITBelgium\VestaCP\Validation\ValidatorExtensions@'.$method, $translation[$rule]);
     }

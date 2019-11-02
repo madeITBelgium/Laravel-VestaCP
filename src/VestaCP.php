@@ -38,7 +38,7 @@ class VestaCP
         if ($client == null) {
             $this->client = new Client([
                 'base_uri' => 'https://'.$server.':8083',
-                'timeout'  => 5.0,
+                //'timeout'  => 5.0,
                 'headers'  => [
                     'User-Agent' => 'Made I.T. Vesta SDK V'.$this->version,
                     'Accept'     => 'application/json',
@@ -82,6 +82,7 @@ class VestaCP
         if ($returnCode != 'yes') {
             $requestData['arg'.$i++] = 'json';
         }
+        //dd($requestData);
         $response = $this->client->request('POST', '/api/', ['form_params' => $requestData]);
         if ($response->getStatusCode() == 200) {
             $body = (string) $response->getBody();

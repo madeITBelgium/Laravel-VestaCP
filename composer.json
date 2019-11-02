@@ -1,5 +1,5 @@
 {
-  "name": "madeitbelgium/laravel-vestacp-dev",
+  "name": "madeitbelgium/laravel-vestacp",
   "version": "0.0.1",
   "description": "PHP Laravel VestaCP",
   "keywords": ["hosting", "vestacp"],
@@ -14,10 +14,10 @@
     }
   ],
   "require": {
-    "illuminate/support": "5.*",
-    "illuminate/container": "5.*",
-    "guzzlehttp/guzzle": "6.3.*",
-    "illuminate/validation": "5.*",
+    "illuminate/support": "5.*|^6.0",
+    "illuminate/container": "5.*|^6.0",
+    "guzzlehttp/guzzle": "6.3.*|^6.0",
+    "illuminate/validation": "5.*|^6.0",
     "php": ">=5.6"
   },
   "require-dev": {

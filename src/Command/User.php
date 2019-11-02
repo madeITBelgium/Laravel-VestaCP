@@ -80,6 +80,18 @@ class User
 
         return true;
     }
+    
+    /*
+     * v-change-user-password USER PASSWORD
+     */
+    public function changePassword($user, $password)
+    {
+        $request = [$user, $password];
+        $this->vestacp->call('v-change-user-password', 'yes', $request);
+
+        return true;
+    }
+    
 
     public function getLastResultCode()
     {

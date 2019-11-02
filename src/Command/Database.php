@@ -81,6 +81,18 @@ class Database
 
         return true;
     }
+    
+    /*
+     * v-change-database-password USER DATABASE DBPASS
+     */
+    public function changePassword($user, $database, $password)
+    {
+        $request = [$user, $database, $password];
+
+        $this->vestacp->call('v-change-database-password', 'yes', $request);
+
+        return true;
+    }
 
     /*
      * v-delete-database USER DATABASE
