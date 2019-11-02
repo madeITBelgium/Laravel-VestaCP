@@ -61,7 +61,9 @@ class WebDomain
         $obj = new self();
         $obj->setDomainname($domainname);
         $obj->setIp($data['IP']);
-        $obj->setIp6($data['IP6']);
+        if(isset($data['IP6'])) {
+            $obj->setIp6($data['IP6']);
+        }
         $obj->setUDisk($data['U_DISK']);
         $obj->setUBandwidth($data['U_BANDWIDTH']);
         $obj->setTemplate($data['TPL']);
@@ -80,7 +82,9 @@ class WebDomain
         $obj->setSuspended($data['SUSPENDED'] == 'yes');
         $obj->setTime($data['TIME']);
         $obj->setDate($data['DATE']);
-        $obj->setDocroot($data['DOCROOT']);
+        if(isset($data['DOCROOT'])) {
+            $obj->setDocroot($data['DOCROOT']);
+        }
 
         return $obj;
     }

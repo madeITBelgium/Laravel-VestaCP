@@ -69,6 +69,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         "PROXY": "hosting",
         "PROXY_EXT": "jpg,jpeg,gif,png,ico,svg,css,zip,tgz,gz,rar,bz2,doc,xls,exe,pdf,ppt,txt,odt,ods,odp,odf,tar,wav,bmp,rtf,js,mp3,avi,mpeg,flv,html,htm",
         "SUSPENDED": "no",
+        "DOCROOT": "public_html",
         "TIME": "16:33:48",
         "DATE": "2018-01-13"
     }
@@ -135,6 +136,7 @@ class DomainTest extends \PHPUnit\Framework\TestCase
         "PROXY": "hosting",
         "PROXY_EXT": "jpg,jpeg,gif,png,ico,svg,css,zip,tgz,gz,rar,bz2,doc,xls,exe,pdf,ppt,txt,odt,ods,odp,odf,tar,wav,bmp,rtf,js,mp3,avi,mpeg,flv,html,htm",
         "SUSPENDED": "no",
+        "DOCROOT": "public_html",
         "TIME": "16:33:48",
         "DATE": "2018-01-13"
     }
