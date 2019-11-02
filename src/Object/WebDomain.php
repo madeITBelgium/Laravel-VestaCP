@@ -234,7 +234,7 @@ class WebDomain
     {
         $this->proxyExt = $proxyExt;
     }
-    
+
     public function getDocroot()
     {
         return $this->docroot;

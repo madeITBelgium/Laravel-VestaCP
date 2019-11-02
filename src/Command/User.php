@@ -80,7 +80,7 @@ class User
 
         return true;
     }
-    
+
     /*
      * v-change-user-password USER PASSWORD
      */
@@ -91,7 +91,6 @@ class User
 
         return true;
     }
-    
 
     public function getLastResultCode()
     {

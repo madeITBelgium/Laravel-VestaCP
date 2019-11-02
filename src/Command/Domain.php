@@ -59,35 +59,35 @@ class Domain
 
         return $domain->loadData('get-web', $response);
     }
-    
+
     /*
      * v-change-web-domain-docroot USER DOMAIN DOCROOT [RESTART]
      */
     public function changeDocroot($user, $domain, $docroot, $restart = null)
     {
         $request = [$user, $domain, $docroot];
-        
+
         $this->vestacp->call('v-change-web-domain-docroot', 'yes', $request);
 
         return true;
     }
-    
+
     /*
      * v-add-letsencrypt-domain USER DOMAIN [ALIASES]
      */
     public function addLetsencrypt($user, $domain, $aliases = [])
     {
         $request = [$user, $domain];
-        
-        if(is_array($aliases) && count($aliases) > 0) {
-            $request[] = implode(",", $aliases);
+
+        if (is_array($aliases) && count($aliases) > 0) {
+            $request[] = implode(',', $aliases);
         }
-        
+
         $this->vestacp->call('v-add-letsencrypt-domain', 'yes', $request);
 
         return true;
     }
-    
+
     /*
      * v-delete-web-domain-ssl USER DOMAIN
      */
@@ -192,7 +192,7 @@ class Domain
     public function changeDNSRecord($user, $domain, $id, $value, $priority = null)
     {
         $request = [$user, $domain, $id, $value];
-        if($priority !== null) {
+        if ($priority !== null) {
             $request[] = $priority;
         }
         $this->vestacp->call('v-change-dns-record', 'yes', $request);
@@ -307,7 +307,7 @@ class Domain
 
         return true;
     }
-    
+
     /*
      * v-delete-domain USER DOMAIN
      */
@@ -324,7 +324,7 @@ class Domain
      */
     public function createFtp($user, $domain, $ftp_user, $ftp_password, $ftp_path = null)
     {
-        if(strpos($ftp_user, $user.'_') === 0) {
+        if (strpos($ftp_user, $user.'_') === 0) {
             $ftp_user = substr($ftp_user, strlen($user.'_'));
         }
         $request = [$user, $domain, $ftp_user, $ftp_password];
