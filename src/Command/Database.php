@@ -81,7 +81,7 @@ class Database
 
         return true;
     }
-    
+
     /*
      * v-change-database-password USER DATABASE DBPASS
      */
