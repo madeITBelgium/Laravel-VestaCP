@@ -44,11 +44,11 @@ class ValidatorTest extends \PHPUnit\Framework\TestCase
         $translator = Mockery::mock('Illuminate\Contracts\Translation\Translator');
         $container->shouldReceive('make')->once()->with('MadeITBelgium\VestaCP\Validation\ValidatorExtensions')->andReturn($extensions);
         $validator->shouldReceive('isUser')->once()->with('user false')->andReturn(false);
-        $translator->shouldReceive('trans')->once()->with('validation.custom')->andReturn('validation.custom');
-        $translator->shouldReceive('trans')->once()->with('validation.custom.foo.user')->andReturn('validation.custom.foo.user');
-        $translator->shouldReceive('trans')->once()->with('validation.user')->andReturn('validation.user');
-        $translator->shouldReceive('trans')->once()->with('validation.attributes')->andReturn('validation.attributes');
-        $translator->shouldReceive('trans')->once()->with('validation.attributes.foo')->andReturn('validation.attributes.foo');
+        $translator->shouldReceive('get')->once()->with('validation.custom')->andReturn('validation.custom');
+        $translator->shouldReceive('get')->once()->with('validation.custom.foo.user')->andReturn('validation.custom.foo.user');
+        $translator->shouldReceive('get')->once()->with('validation.user')->andReturn('validation.user');
+        $translator->shouldReceive('get')->once()->with('validation.attributes')->andReturn('validation.attributes');
+        $translator->shouldReceive('get')->once()->with('validation.attributes.foo')->andReturn('validation.attributes.foo');
         $factory = new Factory($translator, $container);
         $factory->extend('user', 'MadeITBelgium\VestaCP\Validation\ValidatorExtensions@validateUser', ':attribute must be a valid user');
         $validator = $factory->make(['foo' => 'user false'], ['foo' => 'user']);
