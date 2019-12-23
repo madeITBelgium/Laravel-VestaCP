@@ -97,8 +97,7 @@ class VestaCP
             $this->checkResultCode($body);
 
             return true;
-        }
-        else if(!$this->isJson($body)) {
+        } elseif (!$this->isJson($body)) {
             return $body;
         }
 
