@@ -245,36 +245,36 @@
 |v-list-plugin                            |                                                 |                   |         |
 |v-list-plugins                           |                                                 |                   |         |
 |v-list-remote-dns-hosts                  |                                                 |                   |         |
-|v-list-sys-clamd-config                  |                                                 |                   |         |
-|v-list-sys-config                        |                                                 |                   |         |
-|v-list-sys-cpu-status                    |                                                 |                   |         |
-|v-list-sys-db-status                     |                                                 |                   |         |
-|v-list-sys-disk-status                   |                                                 |                   |         |
-|v-list-sys-dns-status                    |                                                 |                   |         |
-|v-list-sys-dovecot-config                |                                                 |                   |         |
-|v-list-sys-info                          |                                                 |                   |         |
-|v-list-sys-interfaces                    |                                                 |                   |         |
-|v-list-sys-ip                            |                                                 |                   |         |
-|v-list-sys-ips                           |                                                 |                   |         |
-|v-list-sys-languages                     |                                                 |                   |         |
-|v-list-sys-mail-status                   |                                                 |                   |         |
-|v-list-sys-memory-status                 |                                                 |                   |         |
-|v-list-sys-mysql-config                  |                                                 |                   |         |
-|v-list-sys-network-status                |                                                 |                   |         |
-|v-list-sys-nginx-config                  |                                                 |                   |         |
-|v-list-sys-pgsql-config                  |                                                 |                   |         |
-|v-list-sys-php-config                    |                                                 |                   |         |
-|v-list-sys-proftpd-config                |                                                 |                   |         |
-|v-list-sys-rrd                           |                                                 |                   |         |
-|v-list-sys-services                      |                                                 |                   |         |
-|v-list-sys-shells                        |                                                 |                   |         |
-|v-list-sys-spamd-config                  |                                                 |                   |         |
-|v-list-sys-users                         |                                                 |                   |         |
-|v-list-sys-vesta-autoupdate              |                                                 |                   |         |
-|v-list-sys-vesta-ssl                     |                                                 |                   |         |
-|v-list-sys-vesta-updates                 |                                                 |                   |         |
-|v-list-sys-vsftpd-config                 |                                                 |                   |         |
-|v-list-sys-web-status                    |                                                 |                   |         |
+|v-list-sys-clamd-config                  | Sys::listSysClamdConfig                         |                   | 0.2.0   |
+|v-list-sys-config                        | Sys::listSysConfig                              |                   | 0.2.0   |
+|v-list-sys-cpu-status                    | Sys::listSysCpuStatus                           |                   | 0.2.0   |
+|v-list-sys-db-status                     | Sys::listSysDbStatus                            |                   | 0.2.0   |
+|v-list-sys-disk-status                   | Sys::listSysDiskStatus                          |                   | 0.2.0   |
+|v-list-sys-dns-status                    | Sys::listSysDnsStatus                           |                   | 0.2.0   |
+|v-list-sys-dovecot-config                | Sys::listSysDovecotConfig                       |                   | 0.2.0   |
+|v-list-sys-info                          | Sys::listSysInfo                                |                   | 0.2.0   |
+|v-list-sys-interfaces                    | Sys::listSysInterfaces                          |                   | 0.2.0   |
+|v-list-sys-ip                            | Sys::listSysIp                                  |                   | 0.2.0   |
+|v-list-sys-ips                           | Sys::listSysIps                                 |                   | 0.2.0   |
+|v-list-sys-languages                     | Sys::listSysLanguages                           |                   | 0.2.0   |
+|v-list-sys-mail-status                   | Sys::listSysMailStatus                          |                   | 0.2.0   |
+|v-list-sys-memory-status                 | Sys::listSysMemoryStatus                        |                   | 0.2.0   |
+|v-list-sys-mysql-config                  | Sys::listSysMysqlConfig                         |                   | 0.2.0   |
+|v-list-sys-network-status                | Sys::listSysNetworkStatus                       |                   | 0.2.0   |
+|v-list-sys-nginx-config                  | Sys::listSysNginxConfig                         |                   | 0.2.0   |
+|v-list-sys-pgsql-config                  | Sys::listSysPgsqlConfig                         |                   | 0.2.0   |
+|v-list-sys-php-config                    | Sys::listSysPhpConfig                           |                   | 0.2.0   |
+|v-list-sys-proftpd-config                | Sys::listSysProftpdConfig                       |                   | 0.2.0   |
+|v-list-sys-rrd                           | Sys::listSysRrd                                 |                   | 0.2.0   |
+|v-list-sys-services                      | Sys::listSysServices                            |                   | 0.2.0   |
+|v-list-sys-shells                        | Sys::listSysShells                              |                   | 0.2.0   |
+|v-list-sys-spamd-config                  | Sys::listSysSpamdConfig                         |                   | 0.2.0   |
+|v-list-sys-users                         | Sys::listSysUsers                               |                   | 0.2.0   |
+|v-list-sys-vesta-autoupdate              | Sys::listSysVestaAutoupdate                     |                   | 0.2.0   |
+|v-list-sys-vesta-ssl                     | Sys::listSysVestaSsl                            |                   | 0.2.0   |
+|v-list-sys-vesta-updates                 | Sys::listSysVestaUpdates                        |                   | 0.2.0   |
+|v-list-sys-vsftpd-config                 | Sys::listSysVsftpdConfig                        |                   | 0.2.0   |
+|v-list-sys-web-status                    | Sys::listSysWebStatus                           |                   | 0.2.0   |
 |v-list-user                              | User::get                                       | User              | 0.0.1   |
 |v-list-user-backup                       |                                                 |                   |         |
 |v-list-user-backup-exclusions            |                                                 |                   |         |
