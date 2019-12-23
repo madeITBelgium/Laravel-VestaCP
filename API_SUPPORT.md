@@ -1,4 +1,4 @@
-# API Support check vestaCP for more information. (51/412)
+# API Support check vestaCP for more information. (65/413)
 
 
 | Endpoint                                | SDK Class::Function                             | Output            | Version |
@@ -13,7 +13,7 @@
 |v-add-cron-restart-job                   |                                                 |                   |         |
 |v-add-cron-vesta-autoupdate              |                                                 |                   |         |
 |v-add-database                           |                                                 |                   |         |
-|v-add-database-host                      |                                                 |                   |         |
+|v-add-database-host                      | Database::create                                | Boolean           | 0.1.0   |
 |v-add-dns-domain                         | Domain::createDNS                               | Boolean           | 0.0.1   |
 |v-add-dns-on-web-alias                   |                                                 |                   |         |
 |v-add-dns-record                         | Domain::createDNSRecord                         | Boolean           | 0.0.1   |
@@ -27,7 +27,7 @@
 |v-add-fs-archive                         |                                                 |                   |         |
 |v-add-fs-directory                       |                                                 |                   |         |
 |v-add-fs-file                            |                                                 |                   |         |
-|v-add-letsencrypt-domain                 |                                                 |                   |         |
+|v-add-letsencrypt-domain                 | Domain::addLetsencrypt                          | Boolean           | 0.0.1   |
 |v-add-letsencrypt-mail-domain            |                                                 |                   |         |
 |v-add-letsencrypt-user                   |                                                 |                   |         |
 |v-add-letsencrypt-vesta                  |                                                 |                   |         |
@@ -71,7 +71,7 @@
 |v-change-cron-job                        |                                                 |                   |         |
 |v-change-database-host-password          |                                                 |                   |         |
 |v-change-database-owner                  |                                                 |                   |         |
-|v-change-database-password               |                                                 |                   |         |
+|v-change-database-password               | Database::changePassword                        | Boolean           | 0.1.0   |
 |v-change-database-user                   |                                                 |                   |         |
 |v-change-dns-domain-exp                  |                                                 |                   |         |
 |v-change-dns-domain-ip                   |                                                 |                   |         |
@@ -79,13 +79,13 @@
 |v-change-dns-domain-soa                  |                                                 |                   |         |
 |v-change-dns-domain-tpl                  |                                                 |                   |         |
 |v-change-dns-domain-ttl                  |                                                 |                   |         |
-|v-change-dns-record                      |                                                 |                   |         |
+|v-change-dns-record                      | Domain::changeDNSRecord                         | Boolean           | 0.1.0   |
 |v-change-dns-record-id                   |                                                 |                   |         |
 |v-change-domain-owner                    |                                                 |                   |         |
 |v-change-firewall-ipv6-rule              |                                                 |                   |         |
 |v-change-firewall-rule                   |                                                 |                   |         |
 |v-change-fs-file-permission              |                                                 |                   |         |
-|v-change-mail-account-password           |                                                 |                   |         |
+|v-change-mail-account-password           | Domain::changeMailAccountPassword               | Boolean           | 0.1.0   |
 |v-change-mail-account-quota              |                                                 |                   |         |
 |v-change-mail-domain-catchall            |                                                 |                   |         |
 |v-change-mail-domain-sslcert             |                                                 |                   |         |
@@ -110,10 +110,11 @@
 |v-change-user-name                       |                                                 |                   |         |
 |v-change-user-ns                         |                                                 |                   |         |
 |v-change-user-package                    |                                                 |                   |         |
-|v-change-user-password                   |                                                 |                   |         |
+|v-change-user-password                   | User::changePassword                            | Boolean           | 0.1.0   |
 |v-change-user-shell                      |                                                 |                   |         |
 |v-change-user-template                   |                                                 |                   |         |
 |v-change-web-domain-backend-tpl          |                                                 |                   |         |
+|v-change-web-domain-docroot .            | Domain::changeDocroot                           | Boolean           | 0.1.0   |
 |v-change-web-domain-ftp-password         | Domain::changeFtpPassword                       | Boolean           | 0.0.1   |
 |v-change-web-domain-ftp-path             |                                                 |                   |         |
 |v-change-web-domain-httpauth             |                                                 |                   |         |
@@ -138,7 +139,7 @@
 |v-delete-cron-reports                    |                                                 |                   |         |
 |v-delete-cron-restart-job                |                                                 |                   |         |
 |v-delete-cron-vesta-autoupdate           |                                                 |                   |         |
-|v-delete-database                        |                                                 |                   |         |
+|v-delete-database                        | Database::delete                                | Boolean           | 0.0.1   |
 |v-delete-database-host                   |                                                 |                   |         |
 |v-delete-databases                       |                                                 |                   |         |
 |v-delete-dns-domain                      | Domain::deleteDNS                               | Boolean           | 0.0.1   |
@@ -146,7 +147,7 @@
 |v-delete-dns-domains-src                 |                                                 |                   |         |
 |v-delete-dns-on-web-alias                |                                                 |                   |         |
 |v-delete-dns-record                      | Domain::deleteDNSRecord                         | Boolean           | 0.0.1   |
-|v-delete-domain                          |                                                 |                   |         |
+|v-delete-domain                          | Domain::delete                                  | Boolean           | 0.0.1   |
 |v-delete-firewall-ban                    |                                                 |                   |         |
 |v-delete-firewall-chain                  |                                                 |                   |         |
 |v-delete-firewall-ipv6-ban               |                                                 |                   |         |
@@ -157,12 +158,12 @@
 |v-delete-fs-file                         |                                                 |                   |         |
 |v-delete-letsencrypt-domain              |                                                 |                   |         |
 |v-delete-letsencrypt-mail-domain         |                                                 |                   |         |
-|v-delete-mail-account                    |                                                 |                   |         |
+|v-delete-mail-account                    | Domain::deleteMailAccount                       | Boolean           | 0.1.0   |
 |v-delete-mail-account-alias              |                                                 |                   |         |
 |v-delete-mail-account-autoreply          |                                                 |                   |         |
 |v-delete-mail-account-forward            |                                                 |                   |         |
 |v-delete-mail-account-fwd-only           |                                                 |                   |         |
-|v-delete-mail-domain                     |                                                 |                   |         |
+|v-delete-mail-domain                     | Domain::deleteMail                              | Boolean           | 0.1.0   |
 |v-delete-mail-domain-antispam            |                                                 |                   |         |
 |v-delete-mail-domain-antivirus           |                                                 |                   |         |
 |v-delete-mail-domain-catchall            |                                                 |                   |         |
@@ -195,7 +196,7 @@
 |v-delete-web-domain-httpauth             |                                                 |                   |         |
 |v-delete-web-domain-proxy                |                                                 |                   |         |
 |v-delete-web-domains                     |                                                 |                   |         |
-|v-delete-web-domain-ssl                  |                                                 |                   |         |
+|v-delete-web-domain-ssl                  | Domain::deleteSsl                               | Boolean           | 0.1.0   |
 |v-delete-web-domain-stats                |                                                 |                   |         |
 |v-delete-web-domain-stats-user           |                                                 |                   |         |
 |v-extract-fs-archive                     |                                                 |                   |         |
@@ -216,10 +217,10 @@
 |v-list-backup-host                       |                                                 |                   |         |
 |v-list-cron-job                          |                                                 |                   |         |
 |v-list-cron-jobs                         |                                                 |                   |         |
-|v-list-database                          |                                                 |                   |         |
+|v-list-database                          | Database::listDatabase                          |                   | 0.1.0   |
 |v-list-database-host                     |                                                 |                   |         |
 |v-list-database-hosts                    |                                                 |                   |         |
-|v-list-databases                         |                                                 |                   |         |
+|v-list-databases                         | Database::listDatabases                         |                   | 0.1.0   |
 |v-list-database-types                    |                                                 |                   |         |
 |v-list-dns-domain                        | Domain::listDNSDomain                           | DNSDomain         | 0.0.1   |
 |v-list-dns-domains                       | Domain::listDNSDomains                          | DNSDomain[]       | 0.0.1   |
