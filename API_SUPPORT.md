@@ -1,4 +1,4 @@
-# API Support check vestaCP for more information. (21/412)
+# API Support check vestaCP for more information. (51/412)
 
 
 | Endpoint                                | SDK Class::Function                             | Output            | Version |
