@@ -164,6 +164,14 @@ class VestaCP
         return $database;
     }
 
+    public function sys()
+    {
+        $sys = new Command\Sys();
+        $sys->setVestaCP($this);
+
+        return $sys;
+    }
+
     public function getLastResultCode()
     {
         return $this->lastResultCode;
