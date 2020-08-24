@@ -58,54 +58,60 @@ class Sys
     /*
      * v-list-sys-mail-status
      */
-    public function listSysMailStatus() {
+    public function listSysMailStatus()
+    {
         $response = $this->vestacp->call('v-list-sys-mail-status');
-        
+
         return $response;
     }
 
     /*
      * v-list-sys-php-config
      */
-    public function listSysPhpConfig() {
+    public function listSysPhpConfig()
+    {
         $response = $this->vestacp->call('v-list-sys-php-config');
-        
+
         return $response;
     }
 
     /*
      * v-list-sys-users
      */
-    public function listSysUsers() {
+    public function listSysUsers()
+    {
         $response = $this->vestacp->call('v-list-sys-users');
-        
+
         return $response;
     }
 
     /*
      * v-list-sys-config
      */
-    public function listSysConfig() {
+    public function listSysConfig()
+    {
         $response = $this->vestacp->call('v-list-sys-config');
-        
+
         return $response;
     }
 
     /*
      * v-list-sys-info
      */
-    public function listSysInfo() {
+    public function listSysInfo()
+    {
         $response = $this->vestacp->call('v-list-sys-info');
-        
+
         return $response;
     }
 
     /*
      * v-list-sys-memory-status
      */
-    public function listSysMemoryStatus() {
+    public function listSysMemoryStatus()
+    {
         $response = $this->vestacp->call('v-list-sys-memory-status');
-        
+
         return $response;
     }
 
@@ -315,6 +321,7 @@ class Sys
     public function listSysSpamdConfig()
     {
         $response = $this->vestacp->call('v-list-sys-spamd-config');
+
         return $response;
     }
 

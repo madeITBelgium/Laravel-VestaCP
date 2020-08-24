@@ -13,7 +13,8 @@ namespace MadeITBelgium\VestaCP\Object;
  */
 class WebDomain
 {
-    use GeneralDomain, DateTime;
+    use GeneralDomain;
+    use DateTime;
 
     private $uDisk;
     private $uBandwidth;
