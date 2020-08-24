@@ -99,8 +99,7 @@ class VestaCP
             return true;
         } elseif (!$this->isJson($body)) {
             return $body;
-        }
-        else if(!$this->isJson($body)) {
+        } elseif (!$this->isJson($body)) {
             return $body;
         }
 

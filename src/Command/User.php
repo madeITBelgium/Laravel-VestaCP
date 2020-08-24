@@ -2,8 +2,8 @@
 
 namespace MadeITBelgium\VestaCP\Command;
 
-use MadeITBelgium\VestaCP\Object\User as ObjectUser;
 use Exception;
+use MadeITBelgium\VestaCP\Object\User as ObjectUser;
 
 /**
  * VestaCP API.
@@ -56,11 +56,12 @@ class User
     public function get($username)
     {
         $response = $this->vestacp->call('v-list-user', '', [$username]);
-        if(!is_array($response)) {
+        if (!is_array($response)) {
             throw new Exception($response);
         }
-        
+
         $user = new ObjectUser();
+
         return $user->loadData('get', $response);
     }
 
