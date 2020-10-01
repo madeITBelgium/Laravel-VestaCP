@@ -207,7 +207,7 @@ class VestaCPTest extends \PHPUnit\Framework\TestCase
         $domain = $vestacp->domain();
         $response = $domain->create('admin', 'test.com');
 
-        $this->assertEquals($vestacp->getLastResultCode(), $code);
+        $this->assertEquals($code, $vestacp->getLastResultCode());
     }
 
     private function createClient($responseCode, $body = '0')
