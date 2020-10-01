@@ -5,7 +5,7 @@ use MadeITBelgium\VestaCP\Validation\ValidatorExtensions;
 
 class ValidatorTest extends \PHPUnit\Framework\TestCase
 {
-    public function setUp() : void
+    public function setUp(): void
     {
         parent::setUp();
     }
